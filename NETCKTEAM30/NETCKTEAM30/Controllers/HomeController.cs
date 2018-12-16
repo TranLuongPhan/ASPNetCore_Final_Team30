@@ -12,6 +12,7 @@ namespace NETCKTEAM30.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.Set<string>("TenDangNhap", null);
             return View();
         }
 
