@@ -213,11 +213,14 @@ namespace NETCKTEAM30.Controllers
                 }
 
                 HttpContext.Session.Set("MaKH", 1);
-
-                return RedirectToAction("index", "Nguoidungs");
+                HttpContext.Session.Set<int>("a", 1);
+                return RedirectToAction("index", "Home");
             }
-            HttpContext.Session.Set("MaKH", 1);
-            return RedirectToAction("index", "nguoidungs");
+            else
+            {
+                return RedirectToAction("index", "Home");
+            }
+            
         }
         public IActionResult dangky()
         {
