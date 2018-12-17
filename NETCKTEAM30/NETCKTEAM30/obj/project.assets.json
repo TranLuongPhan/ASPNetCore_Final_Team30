@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NHU PHAM\\Desktop\\ASPNetCore_Final_Team30-master\\ASPNetCore_Final_Team30-master\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
+      "projectUniqueName": "C:\\Users\\NHU PHAM\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
       "projectName": "NETCKTEAM30",
-      "projectPath": "C:\\Users\\NHU PHAM\\Desktop\\ASPNetCore_Final_Team30-master\\ASPNetCore_Final_Team30-master\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
+      "projectPath": "C:\\Users\\NHU PHAM\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
       "packagesPath": "C:\\Users\\NHU PHAM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NHU PHAM\\Desktop\\ASPNetCore_Final_Team30-master\\ASPNetCore_Final_Team30-master\\NETCKTEAM30\\NETCKTEAM30\\obj\\",
+      "outputPath": "C:\\Users\\NHU PHAM\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

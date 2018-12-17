@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="~/css/mycss.css" rel="stylesheet" />
     <title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +45,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
     <!-- header -->
+
     <div class="agileits_header">
+
         <div class="w3l_offers">
             <a style="background-color:red;" href="products.html">Home</a>
         </div>
@@ -59,8 +62,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="mega-dropdown-menu">
                         <div class="w3ls_vegetables">
                             <ul class="dropdown-menu drp-mnu">
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="login.html">Sign Up</a></li>
+                                @if (Context.Session.Get<int>("MaKH") == 0)
+                                {
+                                    <li><a asp-action="dangnhap" asp-controller="NguoiDungs">Login</a></li>
+                                    <li><a asp-action="dangky" asp-controller="NguoiDungs">Sign Up</a></li>
+
+                                }
+                                else
+                                {
+                                   
+                                    <li><a asp-action="Index" asp-controller="NguoiDungs">Quản Trị</a></li>
+                                }
+
                             </ul>
                         </div>
                     </div>
@@ -69,12 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
 
-        <div class="w3l_search">
-            <form action="#" method="post">
-                <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-                <input type="submit" value=" ">
-            </form>
-        </div>
+        
         <div class="product_list_header">
             <form action="#" method="post" class="last">
                 <fieldset>
@@ -132,6 +140,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </button>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
+
+
                 @{
                     MyDbContext db = new MyDbContext();
                     var loais = db.Loais
@@ -171,6 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a style="padding:4px 0px 4px 40px;" href="#">Nước ép cam</a></li>
                         <li><a style="padding:4px 0px 4px 40px;" href="#">Bánh quy bơ</a></li>
                         <li><a style="padding:4px 0px 4px 40px;" href="#">Cánh gà 500G</a></li>
+
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
