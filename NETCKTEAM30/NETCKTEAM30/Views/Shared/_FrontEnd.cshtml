@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a style="background-color:red;" href="products.html">Home</a>
         </div>
         <div class="w3l_offers">
-            <a style="background-color:red;" href="products.html">Contact Us</a>
+            <a style="background-color:red;" href="Home/Contact">Contact Us</a>
         </div>
 
         <div class="w3l_header_right">
@@ -132,37 +132,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </button>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+                @{
+                    MyDbContext db = new MyDbContext();
+                    var loais = db.Loais
+                        .Where(p => p.HangHoa.Count > 0)
+                        .ToList();
+                    var nhaccs = db.NhaCungCaps
+                    .Where(p => p.HangHoa.Count > 0)
+                    .ToList();
+                }
+
+
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav nav_1">
-                        <li><a href="products.html" style="padding:17px;">Thực phẩm có thương hiệu</a></li>
+                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Loại thực phẩm</a></li>
+                        @foreach (var lo in loais)
+                        {
+                            <li>
+                                <a style="padding:4px 0px 4px 40px;" href="#">
+                                    @lo.TenLoai
+                                </a>
+                            </li>
+                        }
+                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
+                        @foreach (var lo in nhaccs)
+                        {
+                            <li>
+                                <a style="padding:4px 0px 4px 40px;" href="#">
+                                    @lo.TenNhaCc
+                                </a>
+                            </li>
+                        }
 
-                        <li class="dropdown mega-dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding:17px;">Rau củ và trái cây<span class="caret"></span></a>
-                            <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-                                <div class="w3ls_vegetables">
-                                    <ul>
-                                        <li><a href="vegetables.html">Rau củ</a></li>
-                                        <li><a href="vegetables.html">Trái cây</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="household.html" style="padding:16px;">Thực phẩm đông lạnh</a></li>
-                        <li><a href="household.html" style="padding:16px;">Các loại bánh kẹo</a></li>
-                        <li><a href="household.html" style="padding:16px;">Thức ăn cho thú cưng</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding:16px;">Đồ uống<span class="caret"></span></a>
-                            <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-                                <div class="w3ls_vegetables">
-                                    <ul>
-                                        <li><a href="drinks.html">Nước có cồn</a></li>
-                                        <li><a href="drinks.html">Nước ngọt</a></li>
-                                        <li><a href="drinks.html">Nước ép</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="household.html" style="padding:16px;">Đồ gia dụng trong gia đình</a></li>
+                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Sản phẩm bán chạy</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">StrongBow</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">Cá hồi</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">Thịt thăn bò</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">Nước ép cam</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">Bánh quy bơ</a></li>
+                        <li><a style="padding:4px 0px 4px 40px;" href="#">Cánh gà 500G</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -177,6 +187,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
 
+        <!-- newsletter -->
+        <div class="newsletter">
+            <div class="container">
+                <div class="w3agile_newsletter_left">
+                    <h3>sign up for our newsletter</h3>
+                </div>
+                <div class="w3agile_newsletter_right">
+                    <form action="#" method="post">
+                        <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                        <input type="submit" value="subscribe now">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //newsletter -->
         <!-- footer -->
         <div class="footer">
             <div class="container">

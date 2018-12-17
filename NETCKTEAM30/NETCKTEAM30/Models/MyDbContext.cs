@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,11 @@ namespace NETCKTEAM30.Models
 {
     public class MyDbContext: DbContext
     {
+        public MyDbContext()
+        {
+        }
+        public MyDbContext(DbContextOptions options) : base(options)
+        { }
         public DbSet<BinhLuan> BinhLuans { get; set; }
         public DbSet<ChiTietHd> chiTietHds { get; set; }
         public DbSet<GioiTinh> GioiTinhs { get; set; }
@@ -21,7 +27,15 @@ namespace NETCKTEAM30.Models
         public DbSet<TrangThai> TrangThais { get; set; }
         public DbSet<VanChuyen> VanChuyens { get; set; }
         public DbSet<YeuThich> Yeutthichs { get; set; }
-        public MyDbContext(DbContextOptions options):base(options)
-        { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                var builder = new ConfigurationBuilder().
+                    AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                var configuration = builder.Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbCKteam30"));
+            }
+        }
     }
 }

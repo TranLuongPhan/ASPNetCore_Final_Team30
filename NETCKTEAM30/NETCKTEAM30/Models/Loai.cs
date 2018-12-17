@@ -9,6 +9,6 @@ namespace NETCKTEAM30.Models
     {
         public int LoaiID { get; set; }
         public string TenLoai { get; set; }
-
+        public ICollection<HangHoa> HangHoa { get; set; }
     }
 }

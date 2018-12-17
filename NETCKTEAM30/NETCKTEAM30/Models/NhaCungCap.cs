@@ -13,5 +13,6 @@ namespace NETCKTEAM30.Models
         public string SDT { get; set; }
         public string Email { get; set; }
         public string MoTa { get; set; }
+        public ICollection<HangHoa> HangHoa { get; set; }
     }
 }
