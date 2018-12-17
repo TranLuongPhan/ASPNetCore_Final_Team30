@@ -1,52 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
 
-<div class="w3l_banner_nav_right">
-    <!-- mail -->
-    <div class="mail">
-        <h3>Mail Us</h3>
-        <div class="agileinfo_mail_grids">
-            <div class="col-md-4 agileinfo_mail_grid_left">
-                <ul>
-                    <li><i class="fa fa-home" aria-hidden="true"></i></li>
-                    <li>Địa chỉ<span>280, An Dương Vương, Q.5, TP HCM.</span></li>
-                </ul>
-                <ul>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-                    <li>Email<span><a href="#">onlinestore@gmail.com</a></span></li>
-                </ul>
-                <ul>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i></li>
-                    <li>Điện thoại<span>0909 090 999</span></li>
-                </ul>
-            </div>
-            <div class="col-md-8 agileinfo_mail_grid_right">
-                <form action="#" method="post">
-                    <div class="col-md-6 wthree_contact_left_grid">
-                        <input type="text" name="Name" value="Tên của bạn*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name*';}" required="">
-                        <input type="email" name="Email" value="Email*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email*';}" required="">
-                    </div>
-                    <div class="col-md-6 wthree_contact_left_grid">
-                        <input type="text" name="Telephone" value="Điện thoại*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone*';}" required="">
-                        <input type="text" name="Subject" value="Chủ đề*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject*';}" required="">
-                    </div>
-                    <div class="clearfix"> </div>
-                    <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Thông tin cần liên hệ...</textarea>
-                    <input type="submit" value="Submit">
-                    
-                </form>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!-- //mail -->
-</div>
-<div class="clearfix"></div>
-	</div>
-<!-- //banner -->
-<!-- map -->
-<div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.655293014326!2d106.68039661435016!3d10.76102729233199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b8e6575c3%3A0x48d253bde1931e59!2zxJDhuqFpIGjhu41jIFPGsCBQaOG6oW0!5e0!3m2!1svi!2s!4v1526561893552" style="border:0"></iframe>
-</div>
-<!-- //map -->
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>

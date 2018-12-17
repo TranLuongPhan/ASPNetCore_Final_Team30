@@ -1,7 +1,34 @@
 ﻿
 @{
     ViewData["Title"] = "quanlytrangweb";
-    Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NETCKTEAM30</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/mycss.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+<body>
   
+  
+    
+        <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
+        <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
+        <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
+        <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
+        <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
+        <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
+
+
+
+   
+
+</body>
+
+

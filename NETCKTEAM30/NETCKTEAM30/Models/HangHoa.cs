@@ -21,6 +21,5 @@ namespace NETCKTEAM30.Models
         public DateTime NgayNhap { get; set; }
         public string MoTa { get; set; }
         public double GiamGia { get; set; }
-        public int LuotMua { get; set; }
     }
 }

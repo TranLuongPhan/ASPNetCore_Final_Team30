@@ -3,9 +3,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-@{
-    Layout = "_Admin";
-}
 
 <meta name="viewport" content="width=device-width" />
 <meta charset="utf-8" />
@@ -19,16 +16,16 @@
 
 
 <body>
-    <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
-    <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
-    <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
-    <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
-    <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
-    <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
-    <br />
-    <br />
+        <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
+        <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
+        <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
+        <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
+        <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
+        <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
+        <br />
+        <br />
     <p>
-        <a asp-action="Create" class="btn btn-info">Thêm Người dùng</a>
+        <a asp-action="Create"class="btn btn-info">Thêm Người dùng</a>
     </p>
     <table class="table">
         <thead>
@@ -46,10 +43,10 @@
                     Địa Chỉ
                 </th>
                 <th>
-                    SĐT
+                   SĐT
                 </th>
                 <th>
-                    Email
+                   Email
                 </th>
                 <th>
                     Hình
@@ -61,7 +58,7 @@
                     Tên Đăng Nhập
                 </th>
                 <th>
-                    Mật Khẩu
+                   Mật Khẩu
                 </th>
                 <th></th>
             </tr>
@@ -101,9 +98,9 @@
                         @Html.DisplayFor(modelItem => item.MatKhau)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.NguoiDungID" class="btn btn-info">Sửa</a> |
-                        <a asp-action="Details" asp-route-id="@item.NguoiDungID" class="btn btn-info">Chi Tiết</a> |
-                        <a asp-action="Delete" asp-route-id="@item.NguoiDungID" class="btn btn-info">Xóa</a>
+                        <a asp-action="Edit" asp-route-id="@item.NguoiDungID"class="btn btn-info">Sửa</a> |
+                        <a asp-action="Details" asp-route-id="@item.NguoiDungID"class="btn btn-info">Chi Tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.NguoiDungID"class="btn btn-info">Xóa</a>
                     </td>
                 </tr>
             }

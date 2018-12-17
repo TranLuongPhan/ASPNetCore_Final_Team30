@@ -12,12 +12,6 @@ namespace NETCKTEAM30.Controllers
     {
         public IActionResult Index()
         {
-            
-            if (HttpContext.Session.Get<int>("a") != 1)
-            {
-                HttpContext.Session.Set<int>("MaKH", 0);
-            }
-            
             return View();
         }
 
