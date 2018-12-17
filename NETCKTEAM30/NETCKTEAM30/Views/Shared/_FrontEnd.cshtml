@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="mega-dropdown-menu">
                         <div class="w3ls_vegetables">
                             <ul class="dropdown-menu drp-mnu">
-                                @if (Context.Session.Get<string>("TenDangNhap") == null)
+                                @if (Context.Session.Get<int>("MaKH") == 0)
                                 {
                                     <li><a asp-action="dangnhap" asp-controller="NguoiDungs">Login</a></li>
                                     <li><a asp-action="dangky" asp-controller="NguoiDungs">Sign Up</a></li>
@@ -70,9 +70,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 }
                                 else
                                 {
-                                    NguoiDung kh = Context.Session.Get<NguoiDung>("TenDangNhap");
-                                    <h4 style="font-weight:900;color:white;">Hello! @kh.HoTen</h4>
-                                    <img src="~/images/mcuongfit.jpg" alt="Alternate Text" style="width=50px;height:100px;" />
                                    
                                     <li><a asp-action="Index" asp-controller="NguoiDungs">Quản Trị</a></li>
                                 }

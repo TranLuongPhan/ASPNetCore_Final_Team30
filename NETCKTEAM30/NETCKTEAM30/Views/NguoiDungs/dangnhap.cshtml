@@ -1,4 +1,4 @@
-﻿@model NETCKTEAM30.Models.LoginViewModel
+﻿@model LoginViewModel
 @{
     ViewData["Title"] = "dangnhap";
 }
@@ -18,7 +18,7 @@
 
     <div id="id01" class="modal" style="display:block;">
 
-        <form class="modal-content animate" asp-action="dangnhap" asp-controller="NguoiDungs">
+        <form class="modal-content animate" asp-action="dangnhap" asp-controller="NguoiDungs" >
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="~/images/img_avatar2.png" alt="Avatar" class="avatar">
@@ -40,14 +40,14 @@
                     <button class="buttomlogin" type="submit">Login</button>
                 </div>
 
-                <a asp-action="dangky" asp-controller="NguoiDungs" class="btn btn-info" style="width: 858px;">Đăng Ký</a>
+                <a asp-action="dangky" asp-controller="NguoiDungs" class="btn btn-info buttomlogin" >Đăng Ký</a>
                 <br />
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+            <div class="container" style="background-color:#f1f1f1; width:100%;">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
                 <span class="psw">Forgot <a href="#">password?</a></span>

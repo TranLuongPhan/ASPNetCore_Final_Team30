@@ -212,11 +212,12 @@ namespace NETCKTEAM30.Controllers
                     return View();
                 }
 
-                HttpContext.Session.Set<string>("TenDangNhap", kh.TenDangNhap);
+                HttpContext.Session.Set("MaKH", 1);
 
-                return RedirectToAction("Index", "NguoiDungs");
+                return RedirectToAction("index", "Nguoidungs");
             }
-            return RedirectToAction("Index", "NguoiDungs");
+            HttpContext.Session.Set("MaKH", 1);
+            return RedirectToAction("index", "nguoidungs");
         }
         public IActionResult dangky()
         {

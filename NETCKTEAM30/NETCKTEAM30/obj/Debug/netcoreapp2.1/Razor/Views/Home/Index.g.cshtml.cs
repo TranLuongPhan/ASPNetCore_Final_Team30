@@ -343,7 +343,7 @@ using NETCKTEAM30.Models;
             ");
             EndContext();
             BeginContext(13795, 272, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4455e86d6b4745b18d66ccce093b9c94", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b53209d0fae6411180451bac6595636c", async() => {
                 BeginContext(13826, 234, true);
                 WriteLiteral("\r\n                <input type=\"email\" name=\"Email\" value=\"Email\" onfocus=\"this.value = \'\';\" onblur=\"if (this.value == \'\') {this.value = \'Email\';}\" required=\"\">\r\n                <input type=\"submit\" value=\"subscribe now\">\r\n            ");
                 EndContext();

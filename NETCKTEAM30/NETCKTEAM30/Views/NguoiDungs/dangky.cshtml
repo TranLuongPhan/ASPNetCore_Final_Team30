@@ -34,36 +34,36 @@
                 <div class="form-group">
                     Họ Tên
                     <br />
-                    <input asp-for="HoTen" class="form-control" />
+                    <input asp-for="HoTen" class="form-control inputdangky" />
                     <span asp-validation-for="HoTen" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     Giới Tính
-                    <select asp-for="GioiTinhID" class="form-control" asp-items="ViewBag.GioiTinhID"></select>
+                    <select asp-for="GioiTinhID" class="form-control inputdangky" asp-items="ViewBag.GioiTinhID"></select>
                     <br />
                 </div>
                 <div class="form-group">
                     Ngày Sinh
-                    <input asp-for="NgaySinh" class="form-control" />
+                    <input asp-for="NgaySinh" class="form-control inputdangky" />
                     <span asp-validation-for="NgaySinh" class="text-danger"></span>
                     <br />
                 </div>
                 <div class="form-group">
                     Địa Chỉ
                     <br />
-                    <input asp-for="DiaChi" class="form-control" />
+                    <input asp-for="DiaChi" class="form-control inputdangky" />
                     <span asp-validation-for="DiaChi" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     SĐT
                     <br />
-                    <input asp-for="SDT" class="form-control" />
+                    <input asp-for="SDT" class="form-control inputdangky" />
                     <span asp-validation-for="SDT" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     Email
                     <br />
-                    <input asp-for="Email" class="form-control" />
+                    <input asp-for="Email" class="form-control inputdangky" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -75,13 +75,13 @@
 
                 <div class="form-group">
                     Tên Đăng Nhập
-                    <input asp-for="TenDangNhap" class="form-control" />
+                    <input asp-for="TenDangNhap" class="form-control inputdangky" />
                     <span asp-validation-for="TenDangNhap" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     Mật Khẩu
                     <br />
-                    <input asp-for="MatKhau" class="form-control" />
+                    <input asp-for="MatKhau" class="form-control inputdangky" />
                     <span asp-validation-for="MatKhau" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -93,7 +93,7 @@
                 </label>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+            <div class="container " style="background-color:#f1f1f1;width:100%;">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
                 <span class="psw">Forgot <a href="#">password?</a></span>
