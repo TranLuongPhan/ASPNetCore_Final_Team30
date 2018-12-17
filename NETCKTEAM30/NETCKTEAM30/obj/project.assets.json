@@ -12218,23 +12218,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Quan\\.nuget\\packages\\": {},
+    "C:\\Users\\Mcuong.FIT\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Quan\\Desktop\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
+      "projectUniqueName": "C:\\Users\\Mcuong.FIT\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
       "projectName": "NETCKTEAM30",
-      "projectPath": "C:\\Users\\Quan\\Desktop\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
-      "packagesPath": "C:\\Users\\Quan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Quan\\Desktop\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\obj\\",
+      "projectPath": "C:\\Users\\Mcuong.FIT\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\NETCKTEAM30.csproj",
+      "packagesPath": "C:\\Users\\Mcuong.FIT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mcuong.FIT\\Desktop\\layout\\ASPNetCore_Final_Team30\\NETCKTEAM30\\NETCKTEAM30\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Quan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mcuong.FIT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
