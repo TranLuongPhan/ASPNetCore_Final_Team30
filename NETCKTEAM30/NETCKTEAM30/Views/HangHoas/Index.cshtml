@@ -63,43 +63,49 @@
                 <th>
                     Giảm Giá
                 </th>
+                <th>
+                    Lượt mua
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TenHh)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Loai.TenLoai)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DonGia)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hinh)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NgayNhap)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MoTa)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GiamGia)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
-                        <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
-                        <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenHh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Loai.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayNhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiamGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LuotMua)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
