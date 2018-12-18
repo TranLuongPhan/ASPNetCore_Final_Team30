@@ -165,6 +165,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                         }
                         <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
+                        @foreach (var lo in loais)
+                        {
+                            <li>
+                                <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-maloai="@lo.LoaiID">
+                                    @lo.TenLoai
+                                </a>
+                            </li>
+                        }
+                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
                         @foreach (var lo in nhaccs)
                         {
                             <li>
@@ -172,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-mancc=" @lo.NhaCungCapID">
                                         @lo.TenNhaCc
                                     </a>
-</li>
+                            </li>
                         }
 
                         <li><a href="#" style="color:#fff;background-color:#a5c29e;">Sản phẩm bán chạy</a></li>

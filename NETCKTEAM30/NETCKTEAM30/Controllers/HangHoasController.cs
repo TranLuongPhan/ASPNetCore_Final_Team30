@@ -306,9 +306,18 @@ namespace NETCKTEAM30.Controllers
             }));
             
         }
-        public IActionResult chitiet()
+        public IActionResult chitiet(int? id)
         {
-            return View();
+            chitietViewModel model = new chitietViewModel();
+            List<HangHoa> dshhcl = new List<HangHoa>();
+            List<HangHoa> dshhcnhacc = new List<HangHoa>();
+            HangHoa hh = _context.HangHoas.SingleOrDefault(p => p.HanghoaID == id);
+            dshhcl = _context.HangHoas.Where(p => p.MaLoaiID == hh.MaLoaiID).ToList();
+            dshhcnhacc = _context.HangHoas.Where(p => p.NhaCungCapID == hh.NhaCungCapID).ToList();
+            model.don = hh;
+            model.dhhhcungloai = dshhcl;
+            model.dhhhcungncc = dshhcnhacc;
+            return View(model);
         }
     }
 }

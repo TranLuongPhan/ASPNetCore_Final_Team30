@@ -725,3 +725,4 @@ C:\Users\Mcuong.FIT\Desktop\netck\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM3
 C:\Users\Mcuong.FIT\Desktop\netck\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.pdb
 C:\Users\Mcuong.FIT\Desktop\netck\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.csproj.CopyComplete
 C:\Users\Mcuong.FIT\Desktop\netck\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HangHoas\layhanghoa.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NetCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HangHoas\chitiet.g.cshtml.cs

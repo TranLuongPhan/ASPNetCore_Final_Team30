@@ -1,7 +1,96 @@
-﻿
+﻿@model NETCKTEAM30.Models.chitietViewModel
 @{
     ViewData["Title"] = "chitiet";
 }
+<title>@ViewData["Title"] - NETCKTEAM30</title>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
-<h2>chitiet</h2>
 
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/css/mycss.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-4" style="height:500px;">
+        <img src="~/images/@Model.don.Hinh" style="height:450px;" />
+        <hr />
+    </div>
+    <div class="col-sm-3" style="height:500px;">
+        <h1 style="color:black;font-weight:700">@Model.don.TenHh</h1>
+        <hr />
+        <br />
+        <h2 style="color:coral;">@Model.don.DonGia .000 đ</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <form asp-action="mua" asp-controller="HangHoas" method="post">
+            <input type="hidden" value="@Model.don.HanghoaID" name="mahh" />
+            <br />
+            <span>
+                Số Lượng :
+                <br />
+                <input type="number" min="1" step="1" name="soluong" />
+            </span>
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Mua</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-success" style="margin-top:8px;" asp-action="themgvaogio" asp-controller="HangHoas">Thêm vào giỏ</a>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    <div class="col-sm-5" style="height:500px;">
+
+
+    </div>
+
+    <div class="row" style="margin-left:10px;">
+        <h1 style="color:black;font-weight:700">SẢN PHẨM CÙNG LOẠI</h1>
+        <hr />
+        @foreach (var item in Model.dhhhcungloai)
+        {
+            <div class="col-sm-2">
+                <a asp-action="chitiet" asp-controller="HangHoas" class="_hanghoa1"
+                   asp-route-id="@item.HanghoaID">
+                    <img src="~/images/@item.Hinh" style="height:400px;" />
+                    <span class="thongtinsanpham">
+                        <h4 class="tensanpham">@item.TenHh</h4>
+                        <div class="danhmucsanpham">@item.DonGia .000 đ</div>
+                    </span>
+                </a>
+            </div>
+        }
+
+
+    </div>
+
+    <div class="row" style="margin-left:10px;">
+        <h1 style="color:black;font-weight:700">CÙNG NHÀ CUNG CÂP</h1>
+        <hr />
+        @foreach (var item in Model.dhhhcungncc)
+        {
+            <div class="col-sm-2">
+                <a asp-action="chitiet" asp-controller="HangHoas" class="_hanghoa1"
+                   asp-route-id="@item.HanghoaID">
+                    <img src="~/images/@item.Hinh" style="height:400px;" />
+                    <span class="thongtinsanpham">
+                        <h4 class="tensanpham">@item.TenHh</h4>
+                        <div class="danhmucsanpham">@item.DonGia .000 đ</div>
+                    </span>
+                </a>
+            </div>
+        }
+    </div>
+</div>
