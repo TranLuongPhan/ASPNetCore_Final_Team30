@@ -1,9 +1,13 @@
 ﻿@model IEnumerable<NETCKTEAM30.Models.HangHoa>
 
+
 @{
     ViewData["Title"] = "Index";
 }
-<link href="~/css/mycss.css" rel="stylesheet" />
+@{
+    Layout = "_FrontEnd";
+}
+
 <meta name="viewport" content="width=device-width" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,22 +18,21 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
-
 <body>
 
 
-    
-        <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
-        <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
-        <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
-        <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
-        <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
-        <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
+
+    <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
+    <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
+    <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
+    <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
+    <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
+    <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
 
 
 
-        <br />
-         <br />
+    <br />
+    <br />
     <p>
         <a asp-action="Create" class="text btn btn-primary">Thêm Hàng Hóa</a>
     </p>
@@ -40,22 +43,22 @@
                     Tên Hàng Hóa
                 </th>
                 <th>
-                   Loại
+                    Loại
                 </th>
                 <th>
                     Đơn Giá
                 </th>
                 <th>
-                   Hình
+                    Hình
                 </th>
                 <th>
                     Nhà Cung Cấp
                 </th>
                 <th>
-                   Ngày Nhập Hàng
+                    Ngày Nhập Hàng
                 </th>
                 <th>
-                   Mô Tả
+                    Mô Tả
                 </th>
                 <th>
                     Giảm Giá
@@ -93,8 +96,8 @@
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
-                        <a asp-action="Details" asp-route-id="@item.HanghoaID"class="btn btn-primary">Chi Tiết</a> |
-                        <a asp-action="Delete" asp-route-id="@item.HanghoaID"class="btn btn-primary">Xóa</a>
+                        <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
                     </td>
                 </tr>
             }

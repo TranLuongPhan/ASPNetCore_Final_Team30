@@ -78,7 +78,7 @@ namespace NETCKTEAM30.Controllers
                         {
                             item.CopyTo(f);
                         }
-                        arr += item.FileName + ";";
+                        arr += item.FileName ;
                     }
                     hangHoa.Hinh = arr;
                 }
@@ -280,6 +280,23 @@ namespace NETCKTEAM30.Controllers
             {
                 return PartialView();
             }
+        }
+        public IActionResult layhanghoa(int? maloai)
+        {
+            
+            List<HangHoa> dshhs = new List<HangHoa>();
+            
+            dshhs = _context.HangHoas.Where(p => p.MaLoaiID == maloai).ToList();
+            
+            return View(dshhs.Select(h => new HangHoaViewModel
+            {
+                MaHH = h.HanghoaID,
+                TenHH = h.TenHh,
+                Hinh = h.Hinh,
+                DonGia = h.DonGia,
+                GiamGia = h.GiamGia
+            }));
+            
         }
 
     }
