@@ -39,73 +39,120 @@
     <table class="table">
         <thead>
             <tr>
-                <th>
-                    Tên Hàng Hóa
-                </th>
-                <th>
-                    Loại
-                </th>
-                <th>
-                    Đơn Giá
-                </th>
-                <th>
-                    Hình
-                </th>
-                <th>
-                    Nhà Cung Cấp
-                </th>
-                <th>
-                    Ngày Nhập Hàng
-                </th>
-                <th>
-                    Mô Tả
-                </th>
-                <th>
-                    Giảm Giá
-                </th>
-                <th>
-                    Lượt mua
-                </th>
-                <th></th>
+                <div class="row">
+
+                    <div class="col-sm-1">
+                        <th>
+                            Tên Hàng Hóa
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            Loại
+                        </th>
+                    </div>
+
+                    <div class="col-sm-1">
+                        <th>
+                            Đơn Giá
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            Hình
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            Nhà Cung Cấp
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            Ngày Nhập
+                        </th>
+                    </div>
+                    <div class="col-sm-3">
+                        <th>
+                            Mô Tả
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            Giảm Giá
+                        </th>
+                    </div>
+                    <div class="col-sm-1">
+                        <th>
+                            lượt Mua
+                        </th>
+                    </div>
+                    <th></th>
+                </div>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenHh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Loai.TenLoai)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DonGia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hinh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayNhap)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoTa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GiamGia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LuotMua)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
-                    <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
-                    <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
-                </td>
-            </tr>
+                <tr>
+                    <div class="row">
+
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenHh)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Loai.TenLoai)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DonGia)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Hinh)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayNhap)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTa)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GiamGia)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LuotMua)
+                            </td>
+                        </div>
+                        <div class="col-sm-1">
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
+                                <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
+                                <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
+                            </td>
+                        </div>
+                     
+
+                    </div>
+                </tr>
             }
         </tbody>
     </table>

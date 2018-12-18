@@ -62,7 +62,7 @@ namespace NETCKTEAM30.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HanghoaID,TenHh,MaLoaiID,DonGia,Hinh,NhaCungCapID,NgayNhap,MoTa,GiamGia")] HangHoa hangHoa, IFormFile[] myfile)
+        public async Task<IActionResult> Create([Bind("HanghoaID,TenHh,MaLoaiID,DonGia,Hinh,NhaCungCapID,NgayNhap,MoTa,GiamGia,LuotMua")] HangHoa hangHoa, IFormFile[] myfile)
         {
             
             if (ModelState.IsValid)
@@ -116,7 +116,7 @@ namespace NETCKTEAM30.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HanghoaID,TenHh,MaLoaiID,DonGia,Hinh,NhaCungCapID,NgayNhap,MoTa,GiamGia")] HangHoa hangHoa, IFormFile[] myfile)
+        public async Task<IActionResult> Edit(int id, [Bind("HanghoaID,TenHh,MaLoaiID,DonGia,Hinh,NhaCungCapID,NgayNhap,MoTa,GiamGia,LuotMua")] HangHoa hangHoa, IFormFile[] myfile)
         {
             if (id != hangHoa.HanghoaID)
             {
