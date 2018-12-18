@@ -79,7 +79,7 @@ span.psw {
 }
 
 .inputdangky {
-    width: 35%;
+    width: 29%;
 }
 /* The Close Button (x) */
 .close {
@@ -104,7 +104,7 @@ span.psw {
 }
 
 .buttomlogin {
-    width: 35%;
+    width: 29%;
 }
 
 @-webkit-keyframes animatezoom {
@@ -267,7 +267,7 @@ h4.tensanpham {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 25px;
-    background-color: red;
+    
 }
 
 .danhmucsanpham {

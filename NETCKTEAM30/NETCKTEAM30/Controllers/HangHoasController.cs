@@ -281,14 +281,22 @@ namespace NETCKTEAM30.Controllers
                 return PartialView();
             }
         }
-        public IActionResult layhanghoa(int? maloai)
+        public IActionResult layhanghoa(int? maloai,int? mancc)
         {
-            
-            List<HangHoa> dshhs = new List<HangHoa>();
-            
-            dshhs = _context.HangHoas.Where(p => p.MaLoaiID == maloai).ToList();
-            
-            return View(dshhs.Select(h => new HangHoaViewModel
+
+            List<HangHoa> dsHangHoas = new List<HangHoa>();
+            if (maloai.HasValue)
+            {
+                dsHangHoas = _context.HangHoas.Where(p => p.MaLoaiID == maloai)
+                    .ToList();
+            }
+
+            if (mancc.HasValue)
+            {
+                dsHangHoas = _context.HangHoas.Where(p => p.NhaCungCapID == mancc)
+                    .ToList();
+            }
+            return View(dsHangHoas.Select(h => new HangHoaViewModel
             {
                 MaHH = h.HanghoaID,
                 TenHH = h.TenHh,
