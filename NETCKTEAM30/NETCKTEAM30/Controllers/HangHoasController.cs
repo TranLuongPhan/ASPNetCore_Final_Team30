@@ -306,6 +306,9 @@ namespace NETCKTEAM30.Controllers
             }));
             
         }
-
+        public IActionResult chitiet()
+        {
+            return View();
+        }
     }
 }
