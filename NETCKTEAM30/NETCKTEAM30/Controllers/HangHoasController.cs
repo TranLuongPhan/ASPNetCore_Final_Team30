@@ -385,7 +385,35 @@ namespace NETCKTEAM30.Controllers
             return View(dscts);
 
 
-            
+
+        }
+        public IActionResult laphoadon()
+        {
+            ThanhToanViewModel model = new ThanhToanViewModel();
+            HoaDon hd = new HoaDon();
+            hd = _context.hoaDons.Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).First();
+            NguoiDung ngd = new NguoiDung();
+            ngd = _context.NguoiDungs.Where(p => p.NguoiDungID == hd.NguoiDungID).First();
+            Thongtinkh tt = new Thongtinkh();
+            ThanhToan ttoan = _context.ThanhToans.Where(p => p.ThanhToanID == hd.ThanhToanID).First();
+            VanChuyen vc = _context.VanChuyens.Where(p => p.VanChuyenID == hd.VanChuyenID).First();
+            tt.TENKH = ngd.HoTen;
+            tt.SDT = ngd.SDT;
+            tt.HTTHANHTOAN = ttoan.Ten;
+            tt.DCNHAN = ngd.DiaChi;
+            tt.HTVANCHUYEN = vc.Ten;
+            tt.PHIVC = hd.PhiVanChuyen;
+            model.thongtinKH = tt;
+            List<ChiTietHd> dscts = new List<ChiTietHd>();
+            dscts = _context.chiTietHds.Include(x => x.HangHoa).Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).ToList();
+            model.Cthd = dscts;
+            double tongtien = 0;
+            foreach (var item in dscts)
+            {
+                tongtien += item.ThanhTien;
+            }
+            ViewBag.TongTien = tongtien;
+            return View(model);
         }
     }
 }

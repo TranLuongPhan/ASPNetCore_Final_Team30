@@ -818,3 +818,4 @@ C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (2)\ASPNetCore_Final_Te
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (2)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.dll
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (2)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.pdb
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (2)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.csproj.CopyComplete
+C:\Users\Mcuong.FIT\Desktop\netck\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HangHoas\laphoadon.g.cshtml.cs

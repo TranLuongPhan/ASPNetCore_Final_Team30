@@ -44,236 +44,248 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-    <!-- header -->
+    <div class="container-fluid">
 
-    <div class="agileits_header">
+        <!-- header -->
 
-        <div class="w3l_offers">
-            <a style="background-color:red;" href="products.html">Home</a>
-        </div>
-        <div class="w3l_offers">
-            <a style="background-color:red;" href="products.html">Contact Us</a>
-        </div>
+        <div class="agileits_header">
 
-        <div class="w3l_header_right">
-            <ul>
-                <li class="dropdown profile_details_drop">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-                    <div class="mega-dropdown-menu">
-                        <div class="w3ls_vegetables">
-                            <ul class="dropdown-menu drp-mnu">
-                                @if (Context.Session.Get<int>("MaKH") == 0)
-                                {
-                                    <li><a asp-action="dangnhap" asp-controller="NguoiDungs">Login</a></li>
-                                    <li><a asp-action="dangky" asp-controller="NguoiDungs">Sign Up</a></li>
+            <div class="w3l_offers">
+                <a style="background-color:red;" href="products.html">Home</a>
+            </div>
+            <div class="w3l_offers">
+                <a style="background-color:red;" href="products.html">Contact Us</a>
+            </div>
 
-                                }
-                                else
-                                {
+            <div class="w3l_header_right">
+                <ul>
+                    <li class="dropdown profile_details_drop">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                        <div class="mega-dropdown-menu">
+                            <div class="w3ls_vegetables">
+                                <ul class="dropdown-menu drp-mnu">
+                                    @if (Context.Session.Get<int>("MaKH") == 0)
+                                    {
+                                        <li><a asp-action="dangnhap" asp-controller="NguoiDungs">Login</a></li>
+                                        <li><a asp-action="dangky" asp-controller="NguoiDungs">Sign Up</a></li>
 
-                                    <li><a asp-action="Index" asp-controller="NguoiDungs">Quản Trị</a></li>
-                                }
+                                    }
+                                    else
+                                    {
 
-                            </ul>
+                                        <li><a asp-action="Index" asp-controller="NguoiDungs">Quản Trị</a></li>
+                                    }
+
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="product_list_header">
+                <form action="#" method="post" class="last">
+                    <fieldset>
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="display" value="1" />
+                        <input type="submit" name="submit" value="View your cart" class="button" />
+                    </fieldset>
+                </form>
+            </div>
+
         </div>
+        <!-- script-for sticky-nav -->
+        <script>
+            $(document).ready(function () {
+                var navoffeset = $(".agileits_header").offset().top;
+                $(window).scroll(function () {
+                    var scrollpos = $(window).scrollTop();
+                    if (scrollpos >= navoffeset) {
+                        $(".agileits_header").addClass("fixed");
+                    } else {
+                        $(".agileits_header").removeClass("fixed");
+                    }
+                });
 
-
-
-        <div class="product_list_header">
-            <form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
-                </fieldset>
-            </form>
-        </div>
-
-    </div>
-    <!-- script-for sticky-nav -->
-    <script>
-        $(document).ready(function () {
-            var navoffeset = $(".agileits_header").offset().top;
-            $(window).scroll(function () {
-                var scrollpos = $(window).scrollTop();
-                if (scrollpos >= navoffeset) {
-                    $(".agileits_header").addClass("fixed");
-                } else {
-                    $(".agileits_header").removeClass("fixed");
-                }
             });
-
-        });
-    </script>
-    <!-- //script-for sticky-nav -->
-    <div class="logo_products">
-        <div class="container">
-            <div class="w3ls_logo_products_left">
-                <a style="color:#000033;font-size:75px;font-weight:bolder;text-decoration: none;"><span style="color:#800000;">Online</span> Store</a>
-            </div>
-
-            <div class="w3ls_logo_products_left1">
-                <ul class="phone_email">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>0909 090 999</li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">onlinestore@gmail.com</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!-- //header -->
-    <!-- banner -->
-    <div class="banner">
-        <div class="w3l_banner_nav_left">
-            <nav class="navbar nav_bottom">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header nav_2">
-                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+        </script>
+        <!-- //script-for sticky-nav -->
+        <div class="logo_products">
+            <div class="container">
+                <div class="w3ls_logo_products_left">
+                    <a style="color:#000033;font-size:75px;font-weight:bolder;text-decoration: none;"><span style="color:#800000;">Online</span> Store</a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
 
-
-                @{
-                    MyDbContext db = new MyDbContext();
-                    var loais = db.Loais
-                        .Where(p => p.HangHoa.Count > 0)
-                        .ToList();
-                    var nhaccs = db.NhaCungCaps
-                    .Where(p => p.HangHoa.Count > 0)
-                    .ToList();
-                }
-
-
-                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav nav_1">
-                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Loại thực phẩm</a></li>
-                        @foreach (var lo in loais)
-                        {
-                            <li>
-                                <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-maloai="@lo.LoaiID">
-                                    @lo.TenLoai
-                                </a>
-                            </li>
-                        }
-                       
-                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
-                        @foreach (var lo in nhaccs)
-                        {
-                            <li>
-                                    <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-mancc=" @lo.NhaCungCapID">
-                                        @lo.TenNhaCc
-                                    </a>
-                            </li>
-                        }
-
-                        <li><a href="#" style="color:#fff;background-color:#a5c29e;">Sản phẩm bán chạy</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">StrongBow</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">Cá hồi</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">Thịt thăn bò</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">Nước ép cam</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">Bánh quy bơ</a></li>
-                        <li><a style="padding:4px 0px 4px 40px;" href="#">Cánh gà 500G</a></li>
-
+                <div class="w3ls_logo_products_left1">
+                    <ul class="phone_email">
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>0909 090 999</li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">onlinestore@gmail.com</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </nav>
-        </div>
-    
-    <!-- //newsletter -->
-
-
-    
-                <div>
-                    @RenderBody()
-                </div>
-           
-
-
-    <!-- footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="col-md-3 w3_footer_grid">
-                <h3>information</h3>
-                <ul class="w3_footer_grid_list">
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Best Deals</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="short-codes.html">Short Codes</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>policy info</h3>
-                <ul class="w3_footer_grid_list">
-                    <li><a href="faqs.html">FAQ</a></li>
-                    <li><a href="privacy.html">privacy policy</a></li>
-                    <li><a href="privacy.html">terms of use</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>what in stores</h3>
-                <ul class="w3_footer_grid_list">
-                    <li><a href="pet.html">Pet Food</a></li>
-                    <li><a href="frozen.html">Frozen Snacks</a></li>
-                    <li><a href="kitchen.html">Kitchen</a></li>
-                    <li><a href="products.html">Branded Foods</a></li>
-                    <li><a href="household.html">Households</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>twitter posts</h3>
-                <ul class="w3_footer_grid_list1">
-                    <li>
-                        <label class="fa fa-twitter" aria-hidden="true"></label><i>01 day ago</i><span>
-                            Non numquam <a href="#">http://sd.ds/13jklf#</a>
-                            eius modi tempora incidunt ut labore et
-                            <a href="#">http://sd.ds/1389kjklf#</a>quo nulla.
-                        </span>
-                    </li>
-                    <li>
-                        <label class="fa fa-twitter" aria-hidden="true"></label><i>02 day ago</i><span>
-                            Con numquam <a href="#">http://fd.uf/56hfg#</a>
-                            eius modi tempora incidunt ut labore et
-                            <a href="#">http://fd.uf/56hfg#</a>quo nulla.
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-            <div class="agile_footer_grids">
-                <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
-                    <div class="w3_footer_grid_bottom">
-                        <h4>100% secure payments</h4>
-                        <img src="~/images/card.png" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
-                    <div class="w3_footer_grid_bottom">
-                        <h5>connect with us</h5>
-                        <ul class="agileits_social_icons">
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <div class="wthree_footer_copy">
-                <p>© 2016 Grocery Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-            </div>
         </div>
+        <!-- //header -->
+        <div class="nn-sheet row">
+            <aside class="col-md-3">
+
+                <!-- banner -->
+                <div class="banner">
+                    <div class="w3l_banner_nav_left">
+                        <nav class="navbar nav_bottom">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header nav_2">
+                                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+                            @{
+                                MyDbContext db = new MyDbContext();
+                                var loais = db.Loais
+                                    .Where(p => p.HangHoa.Count > 0)
+                                    .ToList();
+                                var nhaccs = db.NhaCungCaps
+                                .Where(p => p.HangHoa.Count > 0)
+                                .ToList();
+                            }
+
+
+                            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                                <ul class="nav navbar-nav nav_1">
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Loại thực phẩm</a></li>
+                                    @foreach (var lo in loais)
+                                    {
+                                        <li>
+                                            <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-maloai="@lo.LoaiID">
+                                                @lo.TenLoai
+                                            </a>
+                                        </li>
+                                    }
+
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
+                                    @foreach (var lo in nhaccs)
+                                    {
+                                        <li>
+                                            <a style="padding:4px 0px 4px 40px;" asp-controller="HangHoas" asp-action="layhanghoa" asp-route-mancc=" @lo.NhaCungCapID">
+                                                @lo.TenNhaCc
+                                            </a>
+                                        </li>
+                                    }
+
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Sản phẩm bán chạy</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">StrongBow</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">Cá hồi</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">Thịt thăn bò</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">Nước ép cam</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">Bánh quy bơ</a></li>
+                                    <li><a style="padding:4px 0px 4px 40px;" href="#">Cánh gà 500G</a></li>
+
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
+
+                    <!-- //newsletter -->
+
+                </div>
+            </aside>
+            <article class="col-md-9">
+                <div class="nn-body">
+                    @RenderBody()
+                </div>
+            </article>
+        </div>
+
+
+        <!-- footer -->
+        <footer class="row">
+
+
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-3 w3_footer_grid">
+                        <h3>information</h3>
+                        <ul class="w3_footer_grid_list">
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Best Deals</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="short-codes.html">Short Codes</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 w3_footer_grid">
+                        <h3>policy info</h3>
+                        <ul class="w3_footer_grid_list">
+                            <li><a href="faqs.html">FAQ</a></li>
+                            <li><a href="privacy.html">privacy policy</a></li>
+                            <li><a href="privacy.html">terms of use</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 w3_footer_grid">
+                        <h3>what in stores</h3>
+                        <ul class="w3_footer_grid_list">
+                            <li><a href="pet.html">Pet Food</a></li>
+                            <li><a href="frozen.html">Frozen Snacks</a></li>
+                            <li><a href="kitchen.html">Kitchen</a></li>
+                            <li><a href="products.html">Branded Foods</a></li>
+                            <li><a href="household.html">Households</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 w3_footer_grid">
+                        <h3>twitter posts</h3>
+                        <ul class="w3_footer_grid_list1">
+                            <li>
+                                <label class="fa fa-twitter" aria-hidden="true"></label><i>01 day ago</i><span>
+                                    Non numquam <a href="#">http://sd.ds/13jklf#</a>
+                                    eius modi tempora incidunt ut labore et
+                                    <a href="#">http://sd.ds/1389kjklf#</a>quo nulla.
+                                </span>
+                            </li>
+                            <li>
+                                <label class="fa fa-twitter" aria-hidden="true"></label><i>02 day ago</i><span>
+                                    Con numquam <a href="#">http://fd.uf/56hfg#</a>
+                                    eius modi tempora incidunt ut labore et
+                                    <a href="#">http://fd.uf/56hfg#</a>quo nulla.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="agile_footer_grids">
+                        <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
+                            <div class="w3_footer_grid_bottom">
+                                <h4>100% secure payments</h4>
+                                <img src="~/images/card.png" alt=" " class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
+                            <div class="w3_footer_grid_bottom">
+                                <h5>connect with us</h5>
+                                <ul class="agileits_social_icons">
+                                    <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="wthree_footer_copy">
+                        <p>© 2016 Grocery Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     <!-- //footer -->
     <!-- Bootstrap Core JavaScript -->
@@ -331,6 +343,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
 
     </script>
-        </div>
+    </div>
+
 </body>
 </html>

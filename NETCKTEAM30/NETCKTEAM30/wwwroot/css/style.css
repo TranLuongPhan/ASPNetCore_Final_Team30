@@ -237,10 +237,9 @@ ul.dropdown-menu.drp-mnu li a i {
     margin-bottom: 0;
     border: none;
 }
-.w3l_banner_nav_left{
-	float: left;
-/*-- agileits --*/
-    width: 20%;
+.w3l_banner_nav_left {
+    float: left;
+    width: 64%;
     background: #f5f5f5;
 }
 .wthree_banner_bottom_left_grid_sub{
