@@ -3,98 +3,78 @@
 @{
     ViewData["Title"] = "Delete";
 }
+@{
+    Layout = "_Admin";
+}
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mainmenu {
+            margin-left: 30%;
+        }
 
-<meta name="viewport" content="width=device-width" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@ViewData["Title"] - NETCKTEAM30</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+        }
 
-<link href="~/css/mycss.css" rel="stylesheet" />
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-
-
+        tr, td {
+            padding: 10px;
+        }
+    </style>
+</head>
 <body>
-    <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
-    <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
-    <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
-    <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
-    <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
-    <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
-    
-    <div>
-        <h4>Xóa Người Dùng Này ?</h4>
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">USERS</h3>
+    <br />
+    <br />
+    <div class="mainmenu">
+        <h4>Bán Muốn Xóa Người Dùng Này ?</h4>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                Họ Tên
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.HoTen)
-            </dd>
-            <dt>
-                Giới Tính
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.GioiTinh.TenGT)
-            </dd>
-            <dt>
-               Ngày Sinh
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.NgaySinh)
-            </dd>
-            <dt>
-                Địa Chỉ
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.DiaChi)
-            </dd>
-            <dt>
-                SĐT
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SDT)
-            </dd>
-            <dt>
-                Email
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-            <dt>
-                Hình
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Hinh)
-            </dd>
-            <dt>
-                Loại Người Dùng
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.LoaiNgDung.TenLoai)
-            </dd>
-            <dt>
-                Tên Đăng Nhập
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.TenDangNhap)
-            </dd>
-            <dt>
-                Mật Khẩu
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.MatKhau)
-            </dd>
-        </dl>
-
+        <table>
+            <tr>
+                <td>Họ Tên: </td>
+                <td> @Html.DisplayFor(model => model.HoTen)</td>
+            </tr>
+            <tr>
+                <td>Giới tính: </td>
+                <td> @Html.DisplayFor(model => model.GioiTinh.TenGT)</td>
+            </tr>
+            <tr>
+                <td>Ngày Sinh: </td>
+                <td> @Html.DisplayFor(model => model.NgaySinh)</td>
+            </tr>
+            <tr>
+                <td>Địa Chỉ: </td>
+                <td> @Html.DisplayFor(model => model.DiaChi)</td>
+            </tr>
+            <tr>
+                <td>SĐT: </td>
+                <td> @Html.DisplayFor(model => model.SDT)</td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td> @Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>Ảnh đại diện: </td>
+                <td>@Html.DisplayFor(model => model.Hinh)</td>
+            </tr>
+            <tr>
+                <td>Loại Người Dùng: </td>
+                <td> @Html.DisplayFor(model => model.LoaiNgDung.TenLoai)</td>
+            </tr>
+            <tr>
+                <td>Tên Đăng Nhập: </td>
+                <td> @Html.DisplayFor(model => model.TenDangNhap)</td>
+            </tr>
+        </table>
+        <br />
+        <br />
         <form asp-action="Delete">
             <input type="hidden" asp-for="NguoiDungID" />
-            <input type="submit" value="Xóa" class="btn btn-default btn btn-info" /> 
-            <br />
-            <br />
-            <a asp-action="Index"class="btn btn-info">Trở Về</a>
+            <input type="submit" value="Xóa" class="w3-bar-item w3-padding w3-pale-red w3-button" />
+            <a asp-action="Index" class="w3-bar-item w3-padding w3-pale-blue w3-button">Trở Về</a>
         </form>
     </div>
 </body>

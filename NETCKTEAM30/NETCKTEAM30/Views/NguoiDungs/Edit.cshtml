@@ -3,31 +3,22 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-
-<meta name="viewport" content="width=device-width" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@ViewData["Title"] - NETCKTEAM30</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-
-<link href="~/css/mycss.css" rel="stylesheet" />
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-
-
+@{
+    Layout = "_Admin";
+}
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mainmenu {
+            margin-left: 24%;
+        }
+    </style>
+</head>
 <body>
-    <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
-    <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
-    <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
-    <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
-    <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
-    <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
-   
-
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">USERS</h3>
     <hr />
-    <div class="row">
-        <div class="col-md-4">
+    <div class="row mainmenu">
+        <div class="col-md-8">
             <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="NguoiDungID" />
@@ -37,7 +28,7 @@
                     <span asp-validation-for="HoTen" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                   Giới Tính
+                    Giới Tính
                     <select asp-for="GioiTinhID" class="form-control" asp-items="ViewBag.GioiTinhID"></select>
                     <span asp-validation-for="GioiTinhID" class="text-danger"></span>
                 </div>
@@ -57,12 +48,13 @@
                     <span asp-validation-for="SDT" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                   Email
+                    Email
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     Hình
+                <dl>
                     <dd>
                         <div style="width:auto;height:210px; ">
                             @foreach (var item in ViewBag.arr)
@@ -75,6 +67,7 @@
                             }
                         </div>
                     </dd>
+                </dl>
                     Khác
                     <input type="file" name="myfile" multiple />
                     <span asp-validation-for="Hinh" class="text-danger"></span>
@@ -95,13 +88,10 @@
                     <span asp-validation-for="MatKhau" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Lưu" class="btn btn-default btn btn-info" />
+                    <input type="submit" value="Lưu" class="w3-bar-item w3-padding w3-pale-red" />
+                    <a asp-action="Index" class="w3-bar-item w3-padding w3-pale-blue w3-button">Trở Về</a>
                 </div>
             </form>
         </div>
-    </div>
-
-    <div>
-        <a asp-action="Index"class="btn btn-info">Trở Về</a>
     </div>
 </body>

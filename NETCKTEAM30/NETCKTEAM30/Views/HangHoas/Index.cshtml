@@ -5,155 +5,59 @@
     ViewData["Title"] = "Index";
 }
 @{
-    Layout = "_FrontEnd";
+    Layout = "_Admin";
 }
-
-<meta name="viewport" content="width=device-width" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@ViewData["Title"] - NETCKTEAM30</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-
-<link href="~/css/mycss.css" rel="stylesheet" />
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 <body>
-
-
-
-    <a class="btn btn-danger" asp-action="index" asp-controller="NhaCungCaps">Nhà Cung cấp</a>
-    <a class="btn btn-primary" asp-action="index" asp-controller="HangHoas">Hàng Hóa</a>
-    <a class="btn btn-success" asp-action="index" asp-controller="Loais">Loai</a>
-    <a class="btn btn-info" asp-action="index" asp-controller="NguoiDungs">Người Dùng</a>
-    <a class="btn btn-warning" asp-action="index" asp-controller="HoaDons">Đơn Hàng Trong Ngày</a>
-    <button type="button" class="btn btn-danger" asp-action="index" asp-controller="HoaDons">Doanh Số</button>
-
-
-
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">PRODUCTS</h3>
     <br />
     <br />
     <p>
-        <a asp-action="Create" class="text btn btn-primary">Thêm Hàng Hóa</a>
+        <a asp-action="Create" class="w3-bar-item w3-button w3-padding w3-pale-red"><i class="fa fa-plus-square"></i> ADD PRODUCT</a>
     </p>
     <table class="table">
         <thead>
             <tr>
-                <div class="row">
-
-                    <div class="col-sm-1">
-                        <th>
-                            Tên Hàng Hóa
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            Loại
-                        </th>
-                    </div>
-
-                    <div class="col-sm-1">
-                        <th>
-                            Đơn Giá
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            Hình
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            Nhà Cung Cấp
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            Ngày Nhập
-                        </th>
-                    </div>
-                    <div class="col-sm-3">
-                        <th>
-                            Mô Tả
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            Giảm Giá
-                        </th>
-                    </div>
-                    <div class="col-sm-1">
-                        <th>
-                            lượt Mua
-                        </th>
-                    </div>
-                    <th></th>
-                </div>
+                <th>
+                    Tên Sản Phẩm
+                </th>
+                <th>
+                    Loại
+                </th>
+                <th>
+                    Đơn Giá
+                </th>
+                <th>
+                    Nhà Cung Cấp
+                </th>
+                <th>
+                    Ngày Nhập
+                </th>
+                <th>
+                    Lượt Mua
+                </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <div class="row">
-
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TenHh)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Loai.TenLoai)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DonGia)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Hinh)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NgayNhap)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MoTa)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.GiamGia)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.LuotMua)
-                            </td>
-                        </div>
-                        <div class="col-sm-1">
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="btn btn-primary">Sửa</a> |
-                                <a asp-action="Details" asp-route-id="@item.HanghoaID" class="btn btn-primary">Chi Tiết</a> |
-                                <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="btn btn-primary">Xóa</a>
-                            </td>
-                        </div>
-                     
-
-                    </div>
-                </tr>
-            }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenHh)</td>
+                <td>@Html.DisplayFor(modelItem => item.Loai.TenLoai)</td>
+                <td>@Html.DisplayFor(modelItem => item.DonGia)</td>
+                <td>@Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCc)</td>
+                <td>@Html.DisplayFor(modelItem => item.NgayNhap)</td>
+                <td>@Html.DisplayFor(modelItem => item.LuotMua)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HanghoaID" class="w3-pale-yellow w3-button">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.HanghoaID" class="w3-pale-blue w3-button">Chi Tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HanghoaID" class="w3-pale-red w3-button">Xóa</a>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 </body>
