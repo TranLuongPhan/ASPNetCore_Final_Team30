@@ -23,9 +23,6 @@
                     Họ Tên
                 </th>
                 <th>
-                    Giới Tính
-                </th>
-                <th>
                     Ngày Sinh
                 </th>
                 <th>
@@ -47,13 +44,10 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td style="width:130px">
+                    <td style="width:180px">
                         @Html.DisplayFor(modelItem => item.HoTen)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GioiTinh.TenGT)
-                    </td>
-                    <td style="width:150px">
+                    <td style="width:120px">
                         @Html.DisplayFor(modelItem => item.NgaySinh)
                     </td>
                     <td style="width: 200px">
