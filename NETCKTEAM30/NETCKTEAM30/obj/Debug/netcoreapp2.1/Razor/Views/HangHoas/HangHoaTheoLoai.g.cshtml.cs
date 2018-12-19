@@ -96,12 +96,12 @@ using NETCKTEAM30.Models;
             WriteLiteral("        <div class=\"col-md-4 hanghoa\">\r\n            ");
             EndContext();
             BeginContext(657, 162, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f141a3bd887948e8a42bb894fc187e37", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6cf8b0ccbd24dc0a3d7affbf9d7dec3", async() => {
                 BeginContext(746, 18, true);
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(764, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d40f6482437d4d91bc113a71df9418f6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0a4dd7a99f5c42e4b98890d73044580c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

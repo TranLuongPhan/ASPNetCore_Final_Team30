@@ -18,5 +18,6 @@ namespace NETCKTEAM30.Models
         public double DonGia { get; set; }
         public int SoLuong { get; set; }
         public double GiamGia { get; set; }
+        public double ThanhTien => SoLuong * (DonGia * (1 - GiamGia));
     }
 }

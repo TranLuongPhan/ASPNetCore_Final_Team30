@@ -319,5 +319,73 @@ namespace NETCKTEAM30.Controllers
             model.dhhhcungncc = dshhcnhacc;
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult mua(int mahh, int soluong)
+        {
+            HangHoa hh = new HangHoa();
+            hh = _context.HangHoas.Where(p => p.HanghoaID == mahh).First();
+            if (HttpContext.Session.Get<int>("xacnhanmuaxong") != 1)
+            {
+                HoaDon hd = new HoaDon();
+                hd.NguoiDungID = 1;
+                DateTime d = DateTime.Now;
+
+                hd.NgayDat = d;
+                hd.NgayNhan = d;
+                hd.TrangThaiID = 8;
+                hd.HoTen = HttpContext.Session.Get<string>("MaKH");
+                hd.DiaChi = null;
+                hd.ThanhToanID = 1;
+                hd.VanChuyenID = 1;
+                hd.PhiVanChuyen = 0;
+                hd.TrangThaiID = 1;
+                hd.GhiChu = null;
+                _context.hoaDons.Add(hd);
+                _context.SaveChanges();
+                HttpContext.Session.Set("hoadonid", hd.HoaDonID);
+                ChiTietHd cthd = new ChiTietHd();
+
+                cthd.HoaDonID = hd.HoaDonID;
+
+                cthd.HangHoaID = mahh;
+                cthd.DonGia = hh.DonGia;
+                cthd.SoLuong = soluong;
+
+                cthd.GiamGia = hh.GiamGia;
+
+                _context.chiTietHds.Add(cthd);
+                _context.SaveChanges();
+                HttpContext.Session.Set("xacnhanmuaxong", 1);
+            }
+            else
+            {
+                ChiTietHd cthd = new ChiTietHd();
+
+                cthd.HoaDonID = HttpContext.Session.Get<int>("hoadonid");
+
+                cthd.HangHoaID = mahh;
+                cthd.DonGia = hh.DonGia;
+                cthd.SoLuong = soluong;
+
+                cthd.GiamGia = hh.GiamGia;
+
+                _context.chiTietHds.Add(cthd);
+                _context.SaveChanges();
+                HttpContext.Session.Set("xacnhanmuaxong", 1);
+            }
+            List<ChiTietHd> dscts = new List<ChiTietHd>();
+            dscts = _context.chiTietHds.Include(x => x.HangHoa).Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).ToList();
+            double tongtien = 0;
+            foreach (var item in dscts)
+            {
+                tongtien += item.ThanhTien;
+            }
+            ViewBag.TongTien = tongtien;
+            return View(dscts);
+
+
+            
+        }
     }
 }

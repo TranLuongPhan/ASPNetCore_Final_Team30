@@ -74,12 +74,12 @@ using NETCKTEAM30.Models;
             WriteLiteral("    <div class=\"col-sm-4\">\r\n        ");
             EndContext();
             BeginContext(247, 347, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a24b6f63db2248e994e7f81eda16345d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66d003b794734ddfab089d718dd7bb57", async() => {
                 BeginContext(351, 14, true);
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(365, 31, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "91a5386bd2a9490ea4c2dcf1fe40c6e9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f769bf882a4749518920d90958a3c524", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
