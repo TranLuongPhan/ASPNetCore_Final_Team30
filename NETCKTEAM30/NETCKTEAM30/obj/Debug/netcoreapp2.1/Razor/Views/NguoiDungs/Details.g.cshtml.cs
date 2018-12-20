@@ -78,7 +78,7 @@ using NETCKTEAM30.Models;
 #line default
 #line hidden
             BeginContext(115, 386, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "987030970bdc49bab04e2c46fbee1974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "883c0f0e4e3a44e9a7ff5026c7dc5a14", async() => {
                 BeginContext(121, 373, true);
                 WriteLiteral(@"
     <link rel=""stylesheet"" href=""https://www.w3schools.com/w3css/4/w3.css"">
@@ -113,7 +113,7 @@ using NETCKTEAM30.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(503, 2022, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "895615d502c94417a4ac4b32a452eb78", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b03e2a0749e84c0693d4f9d7556658ca", async() => {
                 BeginContext(509, 220, true);
                 WriteLiteral("\r\n    <h3 class=\"w3-bar-item w3-padding w3-white\" style=\"width:100%; text-align: center\">PRODUCTS</h3>\r\n    <br />\r\n    <br />\r\n    <table class=\"mainmenu\">\r\n        <tr>\r\n            <td>Họ Tên: </td>\r\n            <td> ");
                 EndContext();
@@ -189,7 +189,7 @@ using NETCKTEAM30.Models;
                 WriteLiteral("                        ");
                 EndContext();
                 BeginContext(1709, 127, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "50b18fd20889440d80225902f5218889", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b0776bbf58544546a33ee6184ebb652d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -247,7 +247,7 @@ AddHtmlAttributeValue("", 1786, item, 1786, 5, false);
                 WriteLiteral("</td>\r\n        </tr>\r\n    </table>\r\n    <br />\r\n    <br />\r\n    <div class=\"mainmenu\">\r\n        ");
                 EndContext();
                 BeginContext(2293, 115, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3daecc670c5f439e9e029c59e4aa6f84", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "106beeb115d845e2b7d5e87ef2d543ff", async() => {
                     BeginContext(2401, 3, true);
                     WriteLiteral("Sửa");
                     EndContext();
@@ -283,7 +283,7 @@ AddHtmlAttributeValue("", 1786, item, 1786, 5, false);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(2418, 86, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3631cf31e53e46d7b1272da13e01b0b6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e66e4eeb2e54d65abeeb26b696515c7", async() => {
                     BeginContext(2494, 6, true);
                     WriteLiteral("Trở Về");
                     EndContext();

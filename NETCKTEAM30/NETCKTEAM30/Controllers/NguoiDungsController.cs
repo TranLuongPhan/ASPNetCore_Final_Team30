@@ -322,6 +322,28 @@ namespace NETCKTEAM30.Controllers
             HttpContext.Session.Set<int>("a", 0);
             return RedirectToAction("index", "Home");
         }
+        [HttpPost]
+        public IActionResult binhluan(int idhh, string bluan)
+        {
+            if (HttpContext.Session.Get<NguoiDung>("MaKH") == null)
+            {
+                HttpContext.Session.Set<int>("a", 4);
+                return RedirectToAction("index", "Home");
+            }
+            NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
+            DateTime d = DateTime.Now;
+            BinhLuan bl = new BinhLuan();
+            bl.NguoiDungID = ngd.NguoiDungID;
+            bl.HangHoaID = idhh;
+            HttpContext.Session.Set<int>("idhh", idhh);
+            bl.NoiDung = bluan;
+            bl.NgayBl = d;
+            _context.BinhLuans.Add(bl);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("chitiet", "HangHoas");
+        }
 
     }
 }

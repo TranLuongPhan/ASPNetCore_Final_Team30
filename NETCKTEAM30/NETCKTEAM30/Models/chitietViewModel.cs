@@ -10,5 +10,6 @@ namespace NETCKTEAM30.Models
         public HangHoa don { get; set; }
         public List<HangHoa> dhhhcungloai { get; set; }
         public List<HangHoa> dhhhcungncc { get; set; }
+        public List<BinhLuan> bluans { get; set; }
     }
 }

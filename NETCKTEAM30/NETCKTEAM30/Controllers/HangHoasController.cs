@@ -311,12 +311,26 @@ namespace NETCKTEAM30.Controllers
             chitietViewModel model = new chitietViewModel();
             List<HangHoa> dshhcl = new List<HangHoa>();
             List<HangHoa> dshhcnhacc = new List<HangHoa>();
-            HangHoa hh = _context.HangHoas.SingleOrDefault(p => p.HanghoaID == id);
+            HangHoa hh = new HangHoa();
+            List<BinhLuan> bls = new List<BinhLuan>();
+            if (id.HasValue)
+            {
+                hh = _context.HangHoas.SingleOrDefault(p => p.HanghoaID == id);
+
+                bls = _context.BinhLuans.Include(x => x.NguoiDung).Where(p => p.HangHoaID == id).ToList();
+            }
+            else
+            {
+                hh = _context.HangHoas.SingleOrDefault(p => p.HanghoaID == HttpContext.Session.Get<int>("idhh"));
+                bls = _context.BinhLuans.Include(x => x.NguoiDung).Where(p => p.HangHoaID == HttpContext.Session.Get<int>("idhh")).ToList();
+            }
             dshhcl = _context.HangHoas.Where(p => p.MaLoaiID == hh.MaLoaiID).ToList();
             dshhcnhacc = _context.HangHoas.Where(p => p.NhaCungCapID == hh.NhaCungCapID).ToList();
             model.don = hh;
             model.dhhhcungloai = dshhcl;
             model.dhhhcungncc = dshhcnhacc;
+
+            model.bluans = bls;
             return View(model);
         }
 
@@ -327,37 +341,46 @@ namespace NETCKTEAM30.Controllers
             hh = _context.HangHoas.Where(p => p.HanghoaID == mahh).First();
             if (HttpContext.Session.Get<int>("xacnhanmuaxong") != 1)
             {
-                NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
-                HoaDon hd = new HoaDon();
-                hd.NguoiDungID = ngd.NguoiDungID;
-                DateTime d = DateTime.Now;
 
-                hd.NgayDat = d;
-                hd.NgayNhan = d;
+                if (HttpContext.Session.Get<NguoiDung>("MaKH") == null)
+                {
+                    HttpContext.Session.Set<int>("a", 3);
+                    return RedirectToAction("index", "Home");
+                }
+                else
+                {
+                    NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
+                    HoaDon hd = new HoaDon();
+                    hd.NguoiDungID = ngd.NguoiDungID;
+                    DateTime d = DateTime.Now;
 
-                hd.HoTen = ngd.HoTen;
-                hd.DiaChi = null;
-                hd.ThanhToanID = 1;
-                hd.VanChuyenID = 1;
-                hd.PhiVanChuyen = 0;
-                hd.TrangThaiID = 1;
-                hd.GhiChu = null;
-                _context.hoaDons.Add(hd);
-                _context.SaveChanges();
-                HttpContext.Session.Set("hoadonid", hd.HoaDonID);
-                ChiTietHd cthd = new ChiTietHd();
+                    hd.NgayDat = d;
+                    hd.NgayNhan = d;
 
-                cthd.HoaDonID = hd.HoaDonID;
+                    hd.HoTen = ngd.HoTen;
+                    hd.DiaChi = null;
+                    hd.ThanhToanID = 1;
+                    hd.VanChuyenID = 1;
+                    hd.PhiVanChuyen = 0;
+                    hd.TrangThaiID = 1;
+                    hd.GhiChu = null;
+                    _context.hoaDons.Add(hd);
+                    _context.SaveChanges();
+                    HttpContext.Session.Set("hoadonid", hd.HoaDonID);
+                    ChiTietHd cthd = new ChiTietHd();
 
-                cthd.HangHoaID = mahh;
-                cthd.DonGia = hh.DonGia;
-                cthd.SoLuong = soluong;
+                    cthd.HoaDonID = hd.HoaDonID;
 
-                cthd.GiamGia = hh.GiamGia;
+                    cthd.HangHoaID = mahh;
+                    cthd.DonGia = hh.DonGia;
+                    cthd.SoLuong = soluong;
 
-                _context.chiTietHds.Add(cthd);
-                _context.SaveChanges();
-                HttpContext.Session.Set("xacnhanmuaxong", 1);
+                    cthd.GiamGia = hh.GiamGia;
+
+                    _context.chiTietHds.Add(cthd);
+                    _context.SaveChanges();
+                    HttpContext.Session.Set("xacnhanmuaxong", 1);
+                }
             }
             else
             {

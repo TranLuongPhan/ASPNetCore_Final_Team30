@@ -74,7 +74,7 @@ using NETCKTEAM30.Models;
 #line default
 #line hidden
             BeginContext(107, 395, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f05f8c91ac0344d29a1224a65140ba21", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9f6e32b920e496690c1f53f7564057f", async() => {
                 BeginContext(113, 382, true);
                 WriteLiteral(@"
     <link rel=""stylesheet"" href=""https://www.w3schools.com/w3css/4/w3.css"">
@@ -111,7 +111,7 @@ using NETCKTEAM30.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(504, 754, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b91092ead1e64a0591b148e5a6ae457e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b26800e64604f1ebab091cc3f2966dd", async() => {
                 BeginContext(510, 306, true);
                 WriteLiteral(@"
     <h3 class=""w3-bar-item w3-padding w3-white"" style=""width:100%; text-align: center"">CATEGORY</h3>
@@ -136,12 +136,12 @@ using NETCKTEAM30.Models;
                 WriteLiteral("</td>\r\n            </tr>\r\n        </table>\r\n        <br />\r\n        <br />\r\n        ");
                 EndContext();
                 BeginContext(940, 297, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c26ae73791a3407fac53023f11d968a5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "373f3a4355df47e5bbee69d81b263ab2", async() => {
                     BeginContext(966, 14, true);
                     WriteLiteral("\r\n            ");
                     EndContext();
                     BeginContext(980, 40, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "618f0df4eb0b4da9a5aba9369cdad928", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1367695a24894aa0a5021361fdd34e3f", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -166,7 +166,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     WriteLiteral("\r\n            <input type=\"submit\" value=\"Xóa\" class=\"w3-bar-item w3-padding w3-pale-red w3-button\">\r\n            ");
                     EndContext();
                     BeginContext(1134, 86, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c75eb0acf4c949baa866726736aa19eb", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "931a9091ed834af888758936917a40bf", async() => {
                         BeginContext(1210, 6, true);
                         WriteLiteral("Trở Về");
                         EndContext();

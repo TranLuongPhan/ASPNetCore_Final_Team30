@@ -75,7 +75,7 @@ using NETCKTEAM30.Models;
 #line default
 #line hidden
             BeginContext(119, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "004489c503074c63bfc7297d2b23a5a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "450a86274e9f4b59be3b9eef92ea3ba4", async() => {
                 BeginContext(125, 79, true);
                 WriteLiteral("\r\n    <link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\r\n");
                 EndContext();
@@ -95,12 +95,12 @@ using NETCKTEAM30.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(213, 1192, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "178e1525beda4f99ac8c30810ec71ff0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a98a26664e3b46c184f3c4c18fe4607c", async() => {
                 BeginContext(219, 145, true);
                 WriteLiteral("\r\n    <h3 class=\"w3-bar-item w3-padding w3-white\" style=\"width:100%; text-align: center\">CATEGORY</h3>\r\n    <br />\r\n    <br />\r\n    <p>\r\n        ");
                 EndContext();
                 BeginContext(364, 126, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d19cc71f938744f59e9f65315df4573d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3847cc1d9a51458ba07ed3a4da0bf5a0", async() => {
                     BeginContext(440, 46, true);
                     WriteLiteral("<i class=\"fa fa-plus-square\"></i> ADD CATEGORY");
                     EndContext();
@@ -142,7 +142,7 @@ using NETCKTEAM30.Models;
                 WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
                 EndContext();
                 BeginContext(971, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "019c9ffd407c42d49d82d4a0b21ba6eb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23cea5d162ea4e97b1561ad3a3b30191", async() => {
                     BeginContext(1053, 3, true);
                     WriteLiteral("Sửa");
                     EndContext();
@@ -178,7 +178,7 @@ using NETCKTEAM30.Models;
                 WriteLiteral(" |\r\n                        ");
                 EndContext();
                 BeginContext(1088, 95, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "810b5cb244a04abba2c341f50e858bab", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40418effe0d45ffabccb6472a38bbe9", async() => {
                     BeginContext(1171, 8, true);
                     WriteLiteral("Chi Tiết");
                     EndContext();
@@ -214,7 +214,7 @@ using NETCKTEAM30.Models;
                 WriteLiteral(" |\r\n                        ");
                 EndContext();
                 BeginContext(1211, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80f0ee95f9ed4aa7ba68182daa3a3d68", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a798322f8ee043169c3db7c4dd01e278", async() => {
                     BeginContext(1292, 3, true);
                     WriteLiteral("Xóa");
                     EndContext();
