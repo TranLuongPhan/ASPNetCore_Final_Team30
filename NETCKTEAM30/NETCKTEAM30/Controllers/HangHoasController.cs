@@ -441,6 +441,18 @@ namespace NETCKTEAM30.Controllers
 
             return RedirectToAction("index", "Home");
         }
+        public IActionResult viewgiohang()
+        {
+            List<ChiTietHd> dscts = new List<ChiTietHd>();
+            dscts = _context.chiTietHds.Include(x => x.HangHoa).Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).ToList();
+            double tongtien = 0;
+            foreach (var item in dscts)
+            {
+                tongtien += item.ThanhTien;
+            }
+            ViewBag.TongTien = tongtien;
+            return View(dscts);
+        }
 
 
 
