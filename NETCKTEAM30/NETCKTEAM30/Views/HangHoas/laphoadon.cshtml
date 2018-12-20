@@ -97,16 +97,15 @@
                 </tbody>
             </table>
             <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000đ</span>
-            <form asp-action="hoattatdonhang" asp-controller="NguoiDungs" method="post">
-                <input type="hidden" value="@Model.thongtinKH.HTTHANHTOAN" name="httt" />
-                <input type="hidden" value="@Model.thongtinKH.HTVANCHUYEN" name="htvc" />
+            <form asp-action="hoattatdonhang" asp-controller="HangHoas" method="post">
                 <div class="form-group">
                     <span style="font-weight: 700;font-size: 19px;">Hình Thức Thanh Toán:</span>
-                    @Model.thongtinKH.HTTHANHTOAN
+
+                    <select asp-for="@Model.thongtinKH.HTTHANHTOAN" class="form-control" asp-items="ViewBag.ThanhToanID" name="tt"></select>
                     <br />
 
                     <span style="font-weight: 700;font-size: 19px;">Hình Thức Vận Chuyển:</span>
-                    @Model.thongtinKH.HTVANCHUYEN
+                    <select asp-for="@Model.thongtinKH.HTVANCHUYEN" class="form-control" asp-items="ViewBag.VanChuyenID" name="vc"></select>
                 </div>
                 <button type="submit" class="btn btn-danger" style="width:30%;float:right;">Hoàn Tất Đơn Hàng</button>
 
@@ -119,6 +118,6 @@
     </div>
 
 
-   
+
 
 </div>

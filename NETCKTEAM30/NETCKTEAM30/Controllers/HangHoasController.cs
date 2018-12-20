@@ -64,7 +64,7 @@ namespace NETCKTEAM30.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HanghoaID,TenHh,MaLoaiID,DonGia,Hinh,NhaCungCapID,NgayNhap,MoTa,GiamGia,LuotMua")] HangHoa hangHoa, IFormFile[] myfile)
         {
-            
+
             if (ModelState.IsValid)
             {
                 string arr = "";
@@ -78,7 +78,7 @@ namespace NETCKTEAM30.Controllers
                         {
                             item.CopyTo(f);
                         }
-                        arr += item.FileName ;
+                        arr += item.FileName;
                     }
                     hangHoa.Hinh = arr;
                 }
@@ -200,17 +200,17 @@ namespace NETCKTEAM30.Controllers
         }
         public IActionResult HangHoaTheoLoai(int? LoaiID, int? NhaCungCapID)
         {
-            
+
             List<HangHoa> DsHh = new List<HangHoa>();
-            if(LoaiID.HasValue)
+            if (LoaiID.HasValue)
             {
                 DsHh = _context.HangHoas.Where(h => h.HanghoaID == LoaiID).ToList();
             }
-            if(NhaCungCapID.HasValue)
+            if (NhaCungCapID.HasValue)
             {
                 DsHh = _context.HangHoas.Where(h => h.NhaCungCapID == NhaCungCapID).ToList();
             }
-            return View(DsHh.Select(h=> new HangHoaViewModel
+            return View(DsHh.Select(h => new HangHoaViewModel
             {
                 MaHH = h.HanghoaID,
                 TenHH = h.TenHh,
@@ -218,7 +218,7 @@ namespace NETCKTEAM30.Controllers
                 DonGia = h.DonGia,
                 GiamGia = h.GiamGia
             }));
-            
+
         }
         public IActionResult selectAo()
         {
@@ -273,7 +273,7 @@ namespace NETCKTEAM30.Controllers
                         DonGia = p.DonGia,
                         GiamGia = p.GiamGia
                     }).ToList();
-                
+
                 return PartialView(data);
             }
             else
@@ -281,7 +281,7 @@ namespace NETCKTEAM30.Controllers
                 return PartialView();
             }
         }
-        public IActionResult layhanghoa(int? maloai,int? mancc)
+        public IActionResult layhanghoa(int? maloai, int? mancc)
         {
 
             List<HangHoa> dsHangHoas = new List<HangHoa>();
@@ -304,7 +304,7 @@ namespace NETCKTEAM30.Controllers
                 DonGia = h.DonGia,
                 GiamGia = h.GiamGia
             }));
-            
+
         }
         public IActionResult chitiet(int? id)
         {
@@ -327,14 +327,15 @@ namespace NETCKTEAM30.Controllers
             hh = _context.HangHoas.Where(p => p.HanghoaID == mahh).First();
             if (HttpContext.Session.Get<int>("xacnhanmuaxong") != 1)
             {
+                NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
                 HoaDon hd = new HoaDon();
-                hd.NguoiDungID = 1;
+                hd.NguoiDungID = ngd.NguoiDungID;
                 DateTime d = DateTime.Now;
 
                 hd.NgayDat = d;
                 hd.NgayNhan = d;
-                hd.TrangThaiID = 8;
-                hd.HoTen = HttpContext.Session.Get<string>("MaKH");
+
+                hd.HoTen = ngd.HoTen;
                 hd.DiaChi = null;
                 hd.ThanhToanID = 1;
                 hd.VanChuyenID = 1;
@@ -399,9 +400,9 @@ namespace NETCKTEAM30.Controllers
             VanChuyen vc = _context.VanChuyens.Where(p => p.VanChuyenID == hd.VanChuyenID).First();
             tt.TENKH = ngd.HoTen;
             tt.SDT = ngd.SDT;
-            tt.HTTHANHTOAN = ttoan.Ten;
+            tt.HTTHANHTOAN = ttoan.ThanhToanID;
             tt.DCNHAN = ngd.DiaChi;
-            tt.HTVANCHUYEN = vc.Ten;
+            tt.HTVANCHUYEN = vc.VanChuyenID;
             tt.PHIVC = hd.PhiVanChuyen;
             model.thongtinKH = tt;
             List<ChiTietHd> dscts = new List<ChiTietHd>();
@@ -413,7 +414,38 @@ namespace NETCKTEAM30.Controllers
                 tongtien += item.ThanhTien;
             }
             ViewBag.TongTien = tongtien;
+            ViewData["VanChuyenID"] = new SelectList(_context.VanChuyens, "VanChuyenID", "Ten");
+            ViewData["ThanhToanID"] = new SelectList(_context.ThanhToans, "ThanhToanID", "Ten");
             return View(model);
         }
+
+        public IActionResult hoattatdonhang(int tt, int vc)
+        {
+            HoaDon hd = _context.hoaDons.Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).First();
+            hd.TrangThaiID = 3;
+            hd.VanChuyenID = vc;
+            hd.ThanhToanID = tt;
+            _context.hoaDons.Update(hd);
+            _context.SaveChanges();
+
+            List<ChiTietHd> cts = new List<ChiTietHd>();
+            cts = _context.chiTietHds.Where(p => p.HoaDonID == hd.HoaDonID).ToList();
+            foreach (var item in cts)
+            {
+                HangHoa hh = _context.HangHoas.Where(p => p.HanghoaID == item.HangHoaID).First();
+                hh.LuotMua++;
+                _context.HangHoas.Update(hh);
+                _context.SaveChanges();
+            }
+
+
+            return RedirectToAction("index", "Home");
+        }
+
+
+
+
+
+
     }
 }

@@ -15,9 +15,9 @@ namespace NETCKTEAM30.Models
     {
         public string TENKH { get; set; }
         public string SDT { get; set; }
-        public string HTTHANHTOAN { get; set; }
+        public int HTTHANHTOAN { get; set; }
         public string DCNHAN { get; set; }
-        public string HTVANCHUYEN { get; set; }
+        public int HTVANCHUYEN { get; set; }
         public double PHIVC { get; set; }
     }
 }
