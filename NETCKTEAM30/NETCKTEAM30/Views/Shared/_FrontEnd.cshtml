@@ -57,14 +57,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a style="background-color:red;" href="products.html">Contact Us</a>
             </div>
 
-            <div class="w3l_header_right">
+            <div class="w3l_header_right" style="color:white;">
+                @{
+                    if (Context.Session.Get<NguoiDung>("MaKH") != null)
+                    {
+                        NguoiDung kh = Context.Session.Get<NguoiDung>("MaKH");
+                        <p>
+                            Xin chào:@kh.HoTen
+                            <img style="width: 58px;height: 54px;float:left;" src="~/images/@kh.Hinh" class="img-thumbnail" alt="Cinque Terre" />
+                        </p>
+                    }
+                }
+
+
                 <ul>
                     <li class="dropdown profile_details_drop">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
-                                    @if (Context.Session.Get<int>("MaKH") == 0)
+                                    @if (Context.Session.Get<NguoiDung>("MaKH") == null)
                                     {
                                         <li><a asp-action="dangnhap" asp-controller="NguoiDungs">Login</a></li>
                                         <li><a asp-action="dangky" asp-controller="NguoiDungs">Sign Up</a></li>
@@ -73,7 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     else
                                     {
 
-                                        <li><a asp-action="Index" asp-controller="NguoiDungs">Quản Trị</a></li>
+                                        NguoiDung kh = Context.Session.Get<NguoiDung>("MaKH");
+                                        <li><a asp-action="suathongtinkh" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Sửa Thông tin cá nhân</a></li>
+                                        <li><a asp-action="dangxuat" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Đăng Xuất</a></li>
                                     }
 
                                 </ul>
@@ -343,6 +357,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
 
     </script>
+    @{
+        if (Context.Session.Get<int>("a") == 2)
+        {
+            <script>
+                alert('Đăng ký thành công! Hãy Đăng nhập! ')
+            </script>
+            Context.Session.Set<int>("a", 1);
+        }
+    }
     </div>
 
 </body>

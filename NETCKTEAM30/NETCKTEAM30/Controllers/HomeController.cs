@@ -12,12 +12,17 @@ namespace NETCKTEAM30.Controllers
     {
         public IActionResult Index()
         {
-            
+
+            if (HttpContext.Session.Get<int>("a") == 2)
+            {
+                return View();
+            }
             if (HttpContext.Session.Get<int>("a") != 1)
             {
-                HttpContext.Session.Set<int>("MaKH", 0);
+                HttpContext.Session.Set<NguoiDung>("MaKH", null);
+                return View();
             }
-            
+
             return View();
         }
 

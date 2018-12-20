@@ -76,7 +76,7 @@ namespace NETCKTEAM30.Controllers
                         {
                             item.CopyTo(f);
                         }
-                        arr += item.FileName + ";";
+                        arr += item.FileName;
                     }
                     nguoiDung.Hinh = arr;
                 }
@@ -136,7 +136,7 @@ namespace NETCKTEAM30.Controllers
                             {
                                 item.CopyTo(f);
                             }
-                            arr += item.FileName + ";";
+                            arr += item.FileName;
                         }
                         nguoiDung.Hinh = arr;
                     }
@@ -212,7 +212,7 @@ namespace NETCKTEAM30.Controllers
                     return View();
                 }
 
-                HttpContext.Session.Set("MaKH", 1);
+                HttpContext.Session.Set("MaKH", kh);
                 HttpContext.Session.Set<int>("a", 1);
                 return RedirectToAction("index", "Home");
             }
@@ -220,7 +220,7 @@ namespace NETCKTEAM30.Controllers
             {
                 return RedirectToAction("index", "Home");
             }
-            
+
         }
         public IActionResult dangky()
         {
@@ -245,12 +245,13 @@ namespace NETCKTEAM30.Controllers
                         {
                             item.CopyTo(f);
                         }
-                        arr += item.FileName + ";";
+                        arr += item.FileName;
                     }
                     nguoiDung.Hinh = arr;
-                    nguoiDung.LoaiNgDungID = 2;
+                    nguoiDung.LoaiNgDungID = 3;
                 }
                 _context.Add(nguoiDung);
+                HttpContext.Session.Set<int>("a", 2);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index), "Home");
             }
@@ -258,5 +259,69 @@ namespace NETCKTEAM30.Controllers
             ViewData["LoaiNgDungID"] = new SelectList(_context.LoaiNgDungs, "LoaiNgDungID", "LoaiNgDungID", nguoiDung.LoaiNgDungID);
             return View(nguoiDung);
         }
+        [HttpGet]
+        public IActionResult suathongtinkh(int id)
+        {
+            NguoiDung ngd = _context.NguoiDungs.Where(p => p.NguoiDungID == id).First();
+            ViewData["GioiTinhID"] = new SelectList(_context.GioiTinhs, "GioiTinhID", "TenGT", ngd.GioiTinhID);
+            ViewData["LoaiNgDungID"] = new SelectList(_context.LoaiNgDungs, "LoaiNgDungID", "TenLoai", ngd.LoaiNgDungID);
+
+            return View(ngd);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> suathongtinkh(int id, int lngd, [Bind("NguoiDungID,HoTen,GioiTinhID,NgaySinh,DiaChi,SDT,Email,Hinh,TenDangNhap,MatKhau")] NguoiDung nguoiDung, IFormFile[] myfile)
+        {
+            if (id != nguoiDung.NguoiDungID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    string arr = "";
+
+                    if (myfile != null)
+                    {
+                        foreach (var item in myfile)
+                        {
+                            string url = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", item.FileName);
+                            using (var f = new FileStream(url, FileMode.Create))
+                            {
+                                item.CopyTo(f);
+                            }
+                            arr += item.FileName;
+                        }
+                        nguoiDung.Hinh = arr;
+                    }
+                    nguoiDung.LoaiNgDungID = lngd;
+                    _context.Update(nguoiDung);
+                    await _context.SaveChangesAsync();
+                    HttpContext.Session.Set("MaKH", nguoiDung);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!NguoiDungExists(nguoiDung.NguoiDungID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("index", "Home");
+            }
+
+            return RedirectToAction("index", "Home");
+        }
+        public IActionResult dangxuat()
+        {
+            HttpContext.Session.Set<int>("a", 0);
+            return RedirectToAction("index", "Home");
+        }
+
     }
 }
