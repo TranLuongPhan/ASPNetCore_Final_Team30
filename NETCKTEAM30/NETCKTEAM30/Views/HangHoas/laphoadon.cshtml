@@ -73,30 +73,36 @@
                 <tbody>
                     @foreach (var item in Model.Cthd)
                     {
-                        <tr>
-                            <td>
-                                @item.HangHoa.TenHh
-                            </td>
-                            <td>
-                                @item.DonGia $
-                            </td>
-                            <td>
-                                @item.SoLuong
-                            </td>
-                            <td>
-                                @item.GiamGia
-                            </td>
-                            <td>
-                                @item.ThanhTien
-                            </td>
+                        double a = (double)item.GiamGia * 100;
+                        item.GiamGia = a;
+                    <tr>
+                        <td>
+                            @item.HangHoa.TenHh
+                        </td>
+                        <td>
+                            @item.DonGia .000 đ
+                        </td>
+                        <td>
+                            @item.SoLuong
+                        </td>
+                        <td>
+                            @item.GiamGia
+                        </td>
+                        @{
+                            item.GiamGia = (double)a / 100;
+                        }
+                        <td>
+                            @item.ThanhTien .000 đ
+                        </td>
 
 
 
-                        </tr>
+                    </tr>
                     }
                 </tbody>
             </table>
-            <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien $</span>
+            <hr />
+            <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000 đ</span>
             <form asp-action="hoattatdonhang" asp-controller="HangHoas" method="post">
                 <div class="form-group">
                     <span style="font-weight: 700;font-size: 19px;">Hình Thức Thanh Toán:</span>

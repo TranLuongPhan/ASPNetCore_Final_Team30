@@ -138,7 +138,7 @@ namespace NETCKTEAM30.Controllers
                             {
                                 item.CopyTo(f);
                             }
-                            arr += item.FileName + ";";
+                            arr += item.FileName ;
                         }
                         hangHoa.Hinh = arr;
                     }

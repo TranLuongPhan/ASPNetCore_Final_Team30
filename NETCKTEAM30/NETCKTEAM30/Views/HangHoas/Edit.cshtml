@@ -19,7 +19,7 @@
     <hr />
     <div class="row mainmenu">
         <div class="col-md-8">
-            <form asp-action="Edit">
+            <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="HanghoaID" />
                 <div class="form-group">

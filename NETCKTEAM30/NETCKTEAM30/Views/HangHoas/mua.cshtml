@@ -50,21 +50,26 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    double a = (double)item.GiamGia * 100;
+                                    item.GiamGia = a;
                                     <tr>
                                         <td>
                                             @item.HangHoa.TenHh
                                         </td>
                                         <td>
-                                            @item.DonGia $
+                                            @item.DonGia .000 đ
                                         </td>
                                         <td>
                                             @item.SoLuong
                                         </td>
                                         <td>
-                                            @item.GiamGia
+                                            @item.GiamGia %
                                         </td>
+                                        @{ 
+                                            item.GiamGia = (double)a / 100;
+                                        }
                                         <td>
-                                            @item.ThanhTien
+                                            @item.ThanhTien .000 đ
                                         </td>
 
 
@@ -73,7 +78,7 @@
                                 }
                             </tbody>
                         </table>
-                        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien </span>
+                        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000 đ </span>
                         <br />
                         <br />
                         <a class="btn btn-success" asp-action="index" asp-controller="Home" style="float:left;"> Mua Thêm Sản Phẩm Khác  </a>
