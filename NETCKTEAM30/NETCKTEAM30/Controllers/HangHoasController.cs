@@ -476,6 +476,20 @@ namespace NETCKTEAM30.Controllers
             ViewBag.TongTien = tongtien;
             return View(dscts);
         }
+        public IActionResult Searchadmin(string keyword = "")
+        {
+            if (keyword != null)
+            {
+                keyword = keyword.ToLower();
+                var data = _context.HangHoas.Include(h => h.Loai).Include(h => h.NhaCungCap).Where(p => p.TenHh.ToLower().Contains(keyword)).ToList();
+               
+                return PartialView(data);
+            }
+            else
+            {
+                return PartialView();
+            }
+        }
 
 
 

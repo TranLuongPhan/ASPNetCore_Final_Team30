@@ -382,5 +382,36 @@ namespace NETCKTEAM30.Controllers
                 MatKhau = h.MatKhau
             }));
         }
+      
+        public IActionResult SearchAdmin(string keyword = "")
+        {
+            if (keyword != null)
+            {
+                keyword = keyword.ToLower();
+                var data = _context.NguoiDungs.Include(n => n.GioiTinh).Include(n => n.LoaiNgDung).Where(p => p.HoTen.ToLower().Contains(keyword))
+                    .ToList();
+
+                return PartialView(data);
+            }
+            else
+            {
+                return PartialView();
+            }
+        }
+        public IActionResult SearchUser(string keyword = "")
+        {
+            if (keyword != null)
+            {
+                keyword = keyword.ToLower();
+                var data = _context.NguoiDungs.Include(n => n.GioiTinh).Include(n => n.LoaiNgDung).Where(p => p.HoTen.ToLower().Contains(keyword))
+                    .ToList();
+
+                return PartialView(data);
+            }
+            else
+            {
+                return PartialView();
+            }
+        }
     }
 }

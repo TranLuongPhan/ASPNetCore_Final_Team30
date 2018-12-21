@@ -193,5 +193,20 @@ namespace NETCKTEAM30.Controllers
             ViewBag.TongTien = tongtien;
             return View(model);
         }
+        public IActionResult Search(int keyword )
+        {
+            if (keyword !=null)
+            {
+
+                var data = _context.hoaDons.Include(h => h.NguoiDung).Include(h => h.ThanhToan).Include(h => h.TrangThai).Include(h => h.VanChuyen).Where(p => p.HoaDonID==keyword)
+                    .ToList();
+
+                return PartialView(data);
+            }
+            else
+            {
+                return PartialView();
+            }
+        }
     }
 }

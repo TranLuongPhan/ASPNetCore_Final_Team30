@@ -148,5 +148,20 @@ namespace NETCKTEAM30.Controllers
         {
             return _context.NhaCungCaps.Any(e => e.NhaCungCapID == id);
         }
+        public IActionResult Search(string keyword = "")
+        {
+            if (keyword != null)
+            {
+                keyword = keyword.ToLower();
+                var data = _context.NhaCungCaps.Where(p => p.TenNhaCc.ToLower().Contains(keyword))
+                    .ToList();
+
+                return PartialView(data);
+            }
+            else
+            {
+                return PartialView();
+            }
+        }
     }
 }

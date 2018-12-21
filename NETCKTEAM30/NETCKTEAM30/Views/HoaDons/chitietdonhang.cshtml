@@ -30,35 +30,35 @@
     <table class="mainmenu" style="width:800px">
         <tr>
             <td>Tên Khách Hàng: </td>
-            <td>@Model.hoadon.NguoiDung.HoTen)</td>
+            <td>@Model.hoadon.NguoiDung.HoTen</td>
         </tr>
         <tr>
             <td>Ngày Đặt: </td>
-            <td>@Model.hoadon.NgayDat)</td>
+            <td>@Model.hoadon.NgayDat</td>
         </tr>
         <tr>
             <td>Ngày Nhận: </td>
-            <td>@Model.hoadon.NgayNhan)</td>
+            <td>@Model.hoadon.NgayNhan</td>
         </tr>
         <tr>
             <td>Địa Chỉ: </td>
-            <td>@Model.hoadon.NguoiDung.DiaChi)</td>
+            <td>@Model.hoadon.NguoiDung.DiaChi</td>
         </tr>
         <tr>
             <td>Hình Thức Thanh Toán: </td>
-            <td>@Model.hoadon.ThanhToan.Ten)</td>
+            <td>@Model.hoadon.ThanhToan.Ten</td>
         </tr>
         <tr>
             <td>Hình Thức Vận Chuyển: </td>
-            <td>@Model.hoadon.VanChuyen.Ten)</td>
+            <td>@Model.hoadon.VanChuyen.Ten</td>
         </tr>
         <tr>
             <td>Phí Vận Chuyển: </td>
-            <td>@Model.hoadon.ThanhToan.Ten)</td>
+            <td>@Model.hoadon.ThanhToan.Ten</td>
         </tr>
         <tr>
             <td>Trạng Thái Đơn Hàng: </td>
-            <td>@Model.hoadon.TrangThai.TenTrangThai)</td>
+            <td>@Model.hoadon.TrangThai.TenTrangThai</td>
         </tr>
     </table>
     <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center" id="dscm">DANH SÁCH SẢN PHẨM ĐÃ MUA </h3>
@@ -85,27 +85,32 @@
         <tbody>
             @foreach (var item in Model.chitiet)
             {
-                <tr>
-                    <td>
-                        @item.HangHoa.TenHh
-                    </td>
-                    <td>
-                        @item.DonGia $
-                    </td>
-                    <td>
-                        @item.SoLuong
-                    </td>
-                    <td>
-                        @item.GiamGia
-                    </td>
-                    <td>
-                        @item.ThanhTien
-                    </td>
-                </tr>
+                double a = (double)item.GiamGia * 100;
+                item.GiamGia = a;
+            <tr>
+                <td>
+                    @item.HangHoa.TenHh
+                </td>
+                <td>
+                    @item.DonGia .000 đ
+                </td>
+                <td>
+                    @item.SoLuong
+                </td>
+                <td>
+                    @item.GiamGia %
+                </td>
+                @{
+                    item.GiamGia = (double)a / 100;
+                }
+                <td>
+                    @item.ThanhTien .000 đ
+                </td>
+            </tr>
             }
         </tbody>
     </table>
-    <span style="margin-left:900px;font-weight: bold" >Tổng cộng:@ViewBag.TongTien </span>
+    <span style="margin-left:900px;font-weight: bold" >Tổng cộng:@ViewBag.TongTien .000 đ </span>
     <br />
     <br />
     <div class="mainmenu">

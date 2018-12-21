@@ -1132,3 +1132,15 @@ C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM3
 C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Index.g.cshtml.cs
 C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\suathongtinkh.g.cshtml.cs
 C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\chitietdonhang.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\BinhLuans\Create.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\BinhLuans\Delete.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\BinhLuans\Details.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\BinhLuans\Edit.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\BinhLuans\Index.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\admin.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\customer.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NhaCungCaps\Search.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HangHoas\Searchadmin.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Search.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\SearchAdmin.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\SearchUser.g.cshtml.cs
