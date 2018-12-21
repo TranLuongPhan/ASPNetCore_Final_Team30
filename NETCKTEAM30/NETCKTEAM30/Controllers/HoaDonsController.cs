@@ -173,5 +173,25 @@ namespace NETCKTEAM30.Controllers
         {
             return _context.hoaDons.Any(e => e.HoaDonID == id);
         }
+        public IActionResult chitietdonhang(int? id)
+        {
+            HoaDonViewModel model = new HoaDonViewModel();
+            List<ChiTietHd> ct = new List<ChiTietHd>();
+            if (id.HasValue)
+            {
+                
+                HoaDon hd = _context.hoaDons.Include(x=>x.NguoiDung).Include(x=>x.ThanhToan).Include(x=>x.VanChuyen).Include(x=>x.TrangThai).Where(p => p.HoaDonID == id).First();
+                ct = _context.chiTietHds.Include(x=>x.HangHoa).Where(p => p.HoaDonID == hd.HoaDonID).ToList();
+                model.hoadon = hd;
+                model.chitiet = ct;
+            }
+            double tongtien = 0;
+            foreach (var item in ct)
+            {
+                tongtien += item.ThanhTien;
+            }
+            ViewBag.TongTien = tongtien;
+            return View(model);
+        }
     }
 }

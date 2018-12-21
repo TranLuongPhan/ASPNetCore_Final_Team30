@@ -7,5 +7,7 @@ namespace NETCKTEAM30.Models
 {
     public class HoaDonViewModel
     {
+        public HoaDon hoadon { get; set; }
+        public List<ChiTietHd> chitiet { get; set; }
     }
 }

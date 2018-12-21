@@ -1119,3 +1119,16 @@ C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (4)\ASPNetCore_Final_Te
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (4)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.dll
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (4)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.pdb
 C:\Users\NHU PHAM\Desktop\ASPNetCore_Final_Team30-master (4)\ASPNetCore_Final_Team30-master\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\NETCKTEAM30.csproj.CopyComplete
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\ChiTietHds\Create.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\ChiTietHds\Delete.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\ChiTietHds\Details.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\ChiTietHds\Edit.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\ChiTietHds\Index.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HangHoas\viewgiohang.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Create.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Delete.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Details.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Edit.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\Index.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\NguoiDungs\suathongtinkh.g.cshtml.cs
+C:\Users\Mcuong.FIT\Desktop\NETCK\ASPNetCore_Final_Team30\NETCKTEAM30\NETCKTEAM30\obj\Debug\netcoreapp2.1\Razor\Views\HoaDons\chitietdonhang.g.cshtml.cs

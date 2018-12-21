@@ -80,9 +80,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     else
                                     {
 
+
                                         NguoiDung kh = Context.Session.Get<NguoiDung>("MaKH");
-                                        <li><a asp-action="suathongtinkh" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Sửa Thông tin cá nhân</a></li>
-                                        <li><a asp-action="dangxuat" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Đăng Xuất</a></li>
+                                        if (kh.LoaiNgDungID == 1)
+                                        {
+                                            <li><a asp-action="quanlytrangweb" asp-controller="Home" asp-route-id="@kh.NguoiDungID">Quản Trị</a></li>
+                                            <li><a asp-action="dangxuat" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Đăng Xuất</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-action="suathongtinkh" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Sửa Thông tin cá nhân</a></li>
+                                            <li><a asp-action="dangxuat" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Đăng Xuất</a></li>
+                                        }
+
                                     }
                                 </ul>
                             </div>

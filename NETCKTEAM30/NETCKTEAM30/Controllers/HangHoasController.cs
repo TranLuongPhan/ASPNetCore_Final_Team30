@@ -358,12 +358,12 @@ namespace NETCKTEAM30.Controllers
                     hd.NgayNhan = d;
 
                     hd.HoTen = ngd.HoTen;
-                    hd.DiaChi = null;
+                    hd.DiaChi = ngd.DiaChi;
                     hd.ThanhToanID = 1;
                     hd.VanChuyenID = 1;
                     hd.PhiVanChuyen = 0;
                     hd.TrangThaiID = 1;
-                    hd.GhiChu = null;
+                    hd.GhiChu = ngd.DiaChi;
                     _context.hoaDons.Add(hd);
                     _context.SaveChanges();
                     HttpContext.Session.Set("hoadonid", hd.HoaDonID);

@@ -3,87 +3,58 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NguoiDung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayDat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayNhan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HoTen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ThanhToan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VanChuyen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhiVanChuyen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GhiChu)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NguoiDung.NguoiDungID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayDat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayNhan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoTen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThanhToan.ThanhToanID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VanChuyen.VanChuyenID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhiVanChuyen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrangThai.TrangThaiID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GhiChu)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.HoaDonID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.HoaDonID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.HoaDonID">Delete</a>
-            </td>
-        </tr>
+@{
+    Layout = "_Admin";
 }
-    </tbody>
-</table>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">ORDERS</h3>
+    <br />
+    <br />
+    <p>
+        <a asp-action="Create" class="w3-bar-item w3-button w3-padding w3-pale-red"><i class="fa fa-plus-square"></i> ADD ORDER</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Mã Hóa Đơn
+                </th>
+                <th>
+                    Ngày Đặt 
+                </th>
+               
+                <th>
+                   Trạng Thái Đơn Hàng
+                </th>
+               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoaDonID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayDat)
+                    </td>
+                 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrangThai.TenTrangThai)
+                    </td>
+                   
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.HoaDonID" class="w3-pale-yellow w3-button">Sửa</a> |
+                        <a asp-action="chitietdonhang" asp-controller="HoaDons" asp-route-id="@item.HoaDonID" class="w3-pale-blue w3-button">Chi Tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.HoaDonID" class="w3-pale-red w3-button">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
