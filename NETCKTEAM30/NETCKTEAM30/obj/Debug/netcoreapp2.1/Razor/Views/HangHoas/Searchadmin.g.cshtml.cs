@@ -163,7 +163,7 @@ using NETCKTEAM30.Models;
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1160, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "318571f59c514a3abcd4bb4073afe0fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ce8acbc188649e6b2b7c2043c1b1c25", async() => {
                 BeginContext(1245, 3, true);
                 WriteLiteral("Sửa");
                 EndContext();
@@ -199,7 +199,7 @@ using NETCKTEAM30.Models;
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1276, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a16867187cd549719c6d5f3985c4d8eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6aa395f45c1e4d8588e6f735c05f3aec", async() => {
                 BeginContext(1362, 8, true);
                 WriteLiteral("Chi Tiết");
                 EndContext();
@@ -235,7 +235,7 @@ using NETCKTEAM30.Models;
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1398, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53c8e9c5a6ae4ae681fa13adebe20e7f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b937b3cdcef47ffb6433721488db9d9", async() => {
                 BeginContext(1482, 3, true);
                 WriteLiteral("Xóa");
                 EndContext();

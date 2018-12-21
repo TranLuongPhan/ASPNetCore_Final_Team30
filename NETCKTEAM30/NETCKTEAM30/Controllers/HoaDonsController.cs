@@ -208,5 +208,21 @@ namespace NETCKTEAM30.Controllers
                 return PartialView();
             }
         }
+        public IActionResult giamtrth(int id)
+        {
+            HoaDon hd = _context.hoaDons.Where(p => p.HoaDonID == id).First();
+            --hd.TrangThaiID;
+            _context.hoaDons.Update(hd);
+            _context.SaveChanges();
+            return RedirectToAction("index", "HoaDons");
+        }
+        public IActionResult tangtrth(int id)
+        {
+            HoaDon hd = _context.hoaDons.Where(p => p.HoaDonID == id).First();
+            ++hd.TrangThaiID;
+            _context.hoaDons.Update(hd);
+            _context.SaveChanges();
+            return RedirectToAction("index", "HoaDons");
+        }
     }
 }

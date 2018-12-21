@@ -75,7 +75,7 @@ using NETCKTEAM30.Models;
 #line default
 #line hidden
             BeginContext(112, 395, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74e84c3739cc4a068e324547eef1cc2b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c3e6b0912e94bd5a60b5e6b2dd31cbc", async() => {
                 BeginContext(118, 382, true);
                 WriteLiteral(@"
     <link rel=""stylesheet"" href=""https://www.w3schools.com/w3css/4/w3.css"">
@@ -112,7 +112,7 @@ using NETCKTEAM30.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(509, 1531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db9da842bd114f0ba7573361a321ee62", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "836be98cfb0f4af19098a3d092e3993f", async() => {
                 BeginContext(515, 244, true);
                 WriteLiteral("\r\n    <h3 class=\"w3-bar-item w3-padding w3-white\" style=\"width:100%; text-align: center\">COMMENTS</h3>\r\n    <br />\r\n    <br />\r\n    <table class=\"mainmenu\" style=\"width:800px\">\r\n        <tr>\r\n            <td>Mã Sản Phẩm: </td>\r\n            <td>");
                 EndContext();
@@ -137,7 +137,7 @@ using NETCKTEAM30.Models;
                 WriteLiteral("</td>\r\n        </tr>\r\n        <tr>\r\n            <td>Ảnh</td>\r\n            <td>");
                 EndContext();
                 BeginContext(1014, 167, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c8e7dc9ed4e34517adfb22bbdae889a9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1f0856334ac2430494b3de172aec867d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -205,7 +205,7 @@ AddHtmlAttributeValue("", 1091, Html.DisplayFor(model => model.HangHoa.Hinh), 10
                 WriteLiteral("</td>\r\n        </tr>\r\n    </table>\r\n    <br />\r\n    <br />\r\n    <div class=\"mainmenu\">\r\n        ");
                 EndContext();
                 BeginContext(1807, 116, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32e518f35ad144a2889ec20c094f081f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a2e5f1e173341b4ab3dab302f8e7b10", async() => {
                     BeginContext(1916, 3, true);
                     WriteLiteral("Xóa");
                     EndContext();
@@ -241,7 +241,7 @@ AddHtmlAttributeValue("", 1091, Html.DisplayFor(model => model.HangHoa.Hinh), 10
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(1933, 86, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d709423a59b4ec4a5ac11eaf22f4c92", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f70400b496594a44a78db1f49693ea14", async() => {
                     BeginContext(2009, 6, true);
                     WriteLiteral("Trở Về");
                     EndContext();

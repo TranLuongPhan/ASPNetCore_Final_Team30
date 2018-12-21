@@ -66,9 +66,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.NgayDat)
                     </td>
-
+                    
                     <td>
-                        @Html.DisplayFor(modelItem => item.TrangThai.TenTrangThai)
+                        <a class="btn btn-danger" asp-action="giamtrth" asp-controller="HoaDons" asp-route-id="@item.HoaDonID"><</a>@Html.DisplayFor(modelItem => item.TrangThai.TenTrangThai)<a asp-action="tangtrth"asp-controller="HoaDons" asp-route-id="@item.HoaDonID"class="btn btn-info">></a>
                     </td>
 
                     <td>

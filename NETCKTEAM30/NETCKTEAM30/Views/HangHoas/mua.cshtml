@@ -44,7 +44,9 @@
                                     <th>
                                         Thành tiền
                                     </th>
-                                    <th></th>
+                                    <th>
+                                        Xóa 
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,7 +73,15 @@
                                         <td>
                                             @item.ThanhTien .000 đ
                                         </td>
-
+                                       
+                                        <td>
+                                           
+                                            <form asp-action="mua" asp-controller="HangHoas" method="post">
+                                               <input type="hidden" value="@item.ChiTietHdID" name="id" />
+             
+                                             <button type="submit" class="btn btn-danger" style="width:90px;">X</button>
+                                            </form>
+                                        </td>
 
 
                                     </tr>

@@ -138,7 +138,7 @@ namespace NETCKTEAM30.Controllers
                             {
                                 item.CopyTo(f);
                             }
-                            arr += item.FileName ;
+                            arr += item.FileName;
                         }
                         hangHoa.Hinh = arr;
                     }
@@ -335,41 +335,62 @@ namespace NETCKTEAM30.Controllers
         }
 
         [HttpPost]
-        public IActionResult mua(int mahh, int soluong)
+        public IActionResult mua(int mahh, int soluong, int id)
         {
-            HangHoa hh = new HangHoa();
-            hh = _context.HangHoas.Where(p => p.HanghoaID == mahh).First();
-            if (HttpContext.Session.Get<int>("xacnhanmuaxong") != 1)
-            {
 
-                if (HttpContext.Session.Get<NguoiDung>("MaKH") == null)
+            if (mahh != 0)
+            {
+                HangHoa hh = new HangHoa();
+                hh = _context.HangHoas.Where(p => p.HanghoaID == mahh).First();
+                if (HttpContext.Session.Get<int>("xacnhanmuaxong") != 1)
                 {
-                    HttpContext.Session.Set<int>("a", 3);
-                    return RedirectToAction("index", "Home");
+
+                    if (HttpContext.Session.Get<NguoiDung>("MaKH") == null)
+                    {
+                        HttpContext.Session.Set<int>("a", 3);
+                        return RedirectToAction("index", "Home");
+                    }
+                    else
+                    {
+                        NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
+                        HoaDon hd = new HoaDon();
+                        hd.NguoiDungID = ngd.NguoiDungID;
+                        DateTime d = DateTime.Now;
+
+                        hd.NgayDat = d;
+                        hd.NgayNhan = d;
+
+                        hd.HoTen = ngd.HoTen;
+                        hd.DiaChi = ngd.DiaChi;
+                        hd.ThanhToanID = 1;
+                        hd.VanChuyenID = 1;
+                        hd.PhiVanChuyen = 0;
+                        hd.TrangThaiID = 1;
+                        hd.GhiChu = ngd.DiaChi;
+                        _context.hoaDons.Add(hd);
+                        _context.SaveChanges();
+                        HttpContext.Session.Set("hoadonid", hd.HoaDonID);
+                        ChiTietHd cthd = new ChiTietHd();
+
+                        cthd.HoaDonID = hd.HoaDonID;
+
+                        cthd.HangHoaID = mahh;
+                        cthd.DonGia = hh.DonGia;
+                        cthd.SoLuong = soluong;
+
+                        cthd.GiamGia = hh.GiamGia;
+
+                        _context.chiTietHds.Add(cthd);
+                        _context.SaveChanges();
+                        HttpContext.Session.Set("xacnhanmuaxong", 1);
+                    }
                 }
                 else
                 {
-                    NguoiDung ngd = HttpContext.Session.Get<NguoiDung>("MaKH");
-                    HoaDon hd = new HoaDon();
-                    hd.NguoiDungID = ngd.NguoiDungID;
-                    DateTime d = DateTime.Now;
 
-                    hd.NgayDat = d;
-                    hd.NgayNhan = d;
-
-                    hd.HoTen = ngd.HoTen;
-                    hd.DiaChi = ngd.DiaChi;
-                    hd.ThanhToanID = 1;
-                    hd.VanChuyenID = 1;
-                    hd.PhiVanChuyen = 0;
-                    hd.TrangThaiID = 1;
-                    hd.GhiChu = ngd.DiaChi;
-                    _context.hoaDons.Add(hd);
-                    _context.SaveChanges();
-                    HttpContext.Session.Set("hoadonid", hd.HoaDonID);
                     ChiTietHd cthd = new ChiTietHd();
 
-                    cthd.HoaDonID = hd.HoaDonID;
+                    cthd.HoaDonID = HttpContext.Session.Get<int>("hoadonid");
 
                     cthd.HangHoaID = mahh;
                     cthd.DonGia = hh.DonGia;
@@ -380,24 +401,17 @@ namespace NETCKTEAM30.Controllers
                     _context.chiTietHds.Add(cthd);
                     _context.SaveChanges();
                     HttpContext.Session.Set("xacnhanmuaxong", 1);
+
                 }
             }
             else
             {
-                ChiTietHd cthd = new ChiTietHd();
-
-                cthd.HoaDonID = HttpContext.Session.Get<int>("hoadonid");
-
-                cthd.HangHoaID = mahh;
-                cthd.DonGia = hh.DonGia;
-                cthd.SoLuong = soluong;
-
-                cthd.GiamGia = hh.GiamGia;
-
-                _context.chiTietHds.Add(cthd);
+                var ct = _context.chiTietHds.Find(id);
+                _context.chiTietHds.Remove(ct);
                 _context.SaveChanges();
-                HttpContext.Session.Set("xacnhanmuaxong", 1);
             }
+
+
             List<ChiTietHd> dscts = new List<ChiTietHd>();
             dscts = _context.chiTietHds.Include(x => x.HangHoa).Where(p => p.HoaDonID == HttpContext.Session.Get<int>("hoadonid")).ToList();
             double tongtien = 0;
@@ -482,7 +496,7 @@ namespace NETCKTEAM30.Controllers
             {
                 keyword = keyword.ToLower();
                 var data = _context.HangHoas.Include(h => h.Loai).Include(h => h.NhaCungCap).Where(p => p.TenHh.ToLower().Contains(keyword)).ToList();
-               
+
                 return PartialView(data);
             }
             else
