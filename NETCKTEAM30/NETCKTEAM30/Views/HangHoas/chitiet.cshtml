@@ -21,7 +21,7 @@
         <h4>Mô Tả:</h4>
         <p>@Model.don.MoTa</p>
         <br />
-        <h4>Giá bán:<span style="color:coral;font-size:30px;"> @Model.don.DonGia $</span></h4>
+        <h4>Giá bán:<span style="color:coral;font-size:30px;"> @Model.don.DonGia .000 đ</span></h4>
         <br />
         <form asp-action="mua" asp-controller="HangHoas" method="post">
             <input type="hidden" value="@Model.don.HanghoaID" name="mahh" />

@@ -360,6 +360,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <script>
                 alert('Người Dùng Chưa Đăng Nhập, Hãy đăng nhập để chúng tối biêt thông tin về khách hàng của mình! ')
             </script>
+            Context.Session.Set<int>("a", 1);
         }
         if (Context.Session.Get<int>("a") == 4)
         {
