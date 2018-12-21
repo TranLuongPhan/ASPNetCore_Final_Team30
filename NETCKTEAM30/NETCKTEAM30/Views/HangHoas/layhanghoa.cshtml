@@ -13,9 +13,14 @@
 
 
 <div class="container-fluid">
-    <div class="row">
-        Sreach
-        <input id="txtSearch" placeholder="Nhập từ khóa" />
+    <div class="row" style="margin-right:-15px;margin-left:-96px;">
+        <div class="products-breadcrumb" style="background-color:#a5c29e;padding:0.5em 14px;">      
+            <ul>
+                <li><i class="fa fa-home" aria-hidden="true"></i><a href="~/">Home</a><span>|</span></li>
+                <li> Sreach <input type="text" id="txtSearch" placeholder="Nhập từ khóa" /></li>
+            </ul> 
+        </div>
+
         <div id="results"></div>
         <script>
             $("#txtSearch").keyup(function () {
@@ -34,14 +39,14 @@
 </div>
 
 
-<div class="row works">
+<div class="row works" style="margin-right:-15px;margin-left:-55px;">
     @foreach (var hh in Model)
     {
 
         <div class="col-sm-3">
             <a asp-action="chitiet" asp-controller="HangHoas" class="_hanghoa1"
                asp-route-id="@hh.MaHH">
-                <img src="~/images/@hh.Hinh" style="height:300px;width:250px"/>
+                <img src="~/images/@hh.Hinh" style="height:310px;width:200px"/>
                 <span class="thongtinsanpham">
                     <h4 class="tensanpham">@hh.TenHH</h4>
                     <div class="danhmucsanpham">@hh.GiaBan $</div>

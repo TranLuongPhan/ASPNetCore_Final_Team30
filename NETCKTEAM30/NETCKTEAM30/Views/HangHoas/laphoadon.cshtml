@@ -4,7 +4,7 @@
 }
 <title>@ViewData["Title"] - NETCKTEAM30</title>
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-
+<link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -78,7 +78,7 @@
                                 @item.HangHoa.TenHh
                             </td>
                             <td>
-                                @item.DonGia .000 đ
+                                @item.DonGia $
                             </td>
                             <td>
                                 @item.SoLuong
@@ -96,7 +96,7 @@
                     }
                 </tbody>
             </table>
-            <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000đ</span>
+            <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien $</span>
             <form asp-action="hoattatdonhang" asp-controller="HangHoas" method="post">
                 <div class="form-group">
                     <span style="font-weight: 700;font-size: 19px;">Hình Thức Thanh Toán:</span>

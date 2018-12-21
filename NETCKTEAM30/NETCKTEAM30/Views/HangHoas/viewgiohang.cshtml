@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>@ViewData["Title"] - NETCKTEAM30</title>
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-
+<link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="~/css/mycss.css" rel="stylesheet" />
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -30,7 +30,7 @@
                                 <tr>
 
                                     <th>
-                                        Tên Món Ăn
+                                        Tên Sản Phẩm
                                     </th>
                                     <th>
                                         Đơn Giá
@@ -55,7 +55,7 @@
                                             @item.HangHoa.TenHh
                                         </td>
                                         <td>
-                                            @item.DonGia .000 đ
+                                            @item.DonGia $
                                         </td>
                                         <td>
                                             @item.SoLuong
@@ -73,12 +73,12 @@
                                 }
                             </tbody>
                         </table>
-                        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien .000đ</span>
+                        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien $</span>
                         <br />
                         <br />
                         <a class="btn btn-success" asp-action="index" asp-controller="Home" style="float:left; margin-top:19px;margin-left:500px;"> Mua Thêm Sản Phẩm Khác  </a>
                         <br />
-                        <a class="btn btn-danger" asp-action="Laphoadon" asp-controller="HangHoas" style="float:right;margin-right:100px;"> Đặt Hàng  </a>
+                        <a class="btn btn-danger" asp-action="Laphoadon" asp-controller="HangHoas" style="float:right;"> Đặt Hàng  </a>
                     </div>
 
                 </div>

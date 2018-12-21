@@ -45,18 +45,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
     <div class="container-fluid">
-
         <!-- header -->
-
         <div class="agileits_header">
-
             <div class="w3l_offers">
-                <a style="background-color:red;" href="products.html">Home</a>
+                <a style="background-color:red;" href="/">Home</a>
             </div>
             <div class="w3l_offers">
-                <a style="background-color:red;" href="products.html">Contact Us</a>
+                <a style="background-color:red;" href="Home/Contact">Contact Us</a>
             </div>
-
             <div class="w3l_header_right" style="color:white;">
                 @{
                     if (Context.Session.Get<NguoiDung>("MaKH") != null)
@@ -68,7 +64,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </p>
                     }
                 }
-
 
                 <ul>
                     <li class="dropdown profile_details_drop">
@@ -89,7 +84,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <li><a asp-action="suathongtinkh" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Sửa Thông tin cá nhân</a></li>
                                         <li><a asp-action="dangxuat" asp-controller="NguoiDungs" asp-route-id="@kh.NguoiDungID">Đăng Xuất</a></li>
                                     }
-
                                 </ul>
                             </div>
                         </div>
@@ -97,18 +91,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
 
-
-
             <div class="product_list_header">
                 <a asp-action="viewgiohang" asp-controller="HangHoas">
 
-
                     <input name="submit" value="View your cart" class="button" />
-
 
                 </a>
             </div>
-
         </div>
         <!-- script-for sticky-nav -->
         <script>
@@ -126,28 +115,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         </script>
         <!-- //script-for sticky-nav -->
-        <div class="logo_products">
+        <div class="logo_products" style="padding: 2em 0px 0em;">
             <div class="container">
                 <div class="w3ls_logo_products_left">
-                    <a style="color:#000033;font-size:75px;font-weight:bolder;text-decoration: none;"><span style="color:#800000;">Online</span> Store</a>
+                    <a style="color:#000033;font-size:75px;font-weight:bolder;text-decoration: none;"><span style="color:#800000;">Go</span> Shopee</a>
                 </div>
-
                 <div class="w3ls_logo_products_left1">
                     <ul class="phone_email">
                         <li><i class="fa fa-phone" aria-hidden="true"></i>0909 090 999</li>
-                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">onlinestore@gmail.com</a></li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">goshopee@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
         <!-- //header -->
-        <div class="nn-sheet row">
-            <aside class="col-md-3">
-
+        <div class="row" style="margin-right:-29px;margin-left:-29px;">
+            <div class="col-md-3">
                 <!-- banner -->
                 <div class="banner">
-                    <div class="w3l_banner_nav_left">
+                    <div class="w3l_banner_nav_left" style="float:left;width:84%">
                         <nav class="navbar nav_bottom">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header nav_2">
@@ -160,7 +147,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
 
-
                             @{
                                 MyDbContext db = new MyDbContext();
                                 var loais = db.Loais
@@ -171,10 +157,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 .ToList();
                             }
 
-
                             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                                 <ul class="nav navbar-nav nav_1">
-                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Loại thực phẩm</a></li>
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;font-size:18px;font-weight:bold;">Loại sản phẩm</a></li>
                                     @foreach (var lo in loais)
                                     {
                                         <li>
@@ -183,8 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </a>
                                         </li>
                                     }
-
-                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Nhà cung cấp</a></li>
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;font-size:18px;font-weight:bold;">Nhà cung cấp</a></li>
                                     @foreach (var lo in nhaccs)
                                     {
                                         <li>
@@ -193,35 +177,208 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </a>
                                         </li>
                                     }
-
-                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;">Sản phẩm bán chạy</a></li>
+                                    <li><a href="#" style="color:#fff;background-color:#a5c29e;font-size:18px;font-weight:bold;">Sản phẩm bán chạy</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">StrongBow</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">Cá hồi</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">Thịt thăn bò</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">Nước ép cam</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">Bánh quy bơ</a></li>
                                     <li><a style="padding:4px 0px 4px 40px;" href="#">Cánh gà 500G</a></li>
-
                                 </ul>
                             </div><!-- /.navbar-collapse -->
                         </nav>
                     </div>
-
                     <!-- //newsletter -->
-
                 </div>
-            </aside>
+            </div>
             <article class="col-md-9">
-                <div class="nn-body">
-                    @RenderBody()
-                </div>
+
+                @RenderBody()
+
             </article>
+
         </div>
+        <!-- top-brands -->
+        <div class="top-brands" style="margin:1%">
+            <div class="container">
+                <h3>Ưu đãi hàng đầu</h3>
+                <div class="agile_top_brands_grids" style="margin:3em 0em 0em;">
+                    <div class="col-md-3 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="tag"><img src="~/images/tag.png" alt=" " class="img-responsive" /></div>
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="single.html"><img title=" " alt=" " src="~/images/1.png" /></a>
+                                                <p>fortune sunflower oil</p>
+                                                <h4>$7.99 <span>$10.00</span></h4>
+                                            </div>
 
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="single.html"><img title=" " alt=" " src="~/images/3.png" /></a>
+                                                <p>basmati rise (5 Kg)</p>
+                                                <h4>$11.99 <span>$15.00</span></h4>
+                                            </div>
 
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="agile_top_brand_left_grid_pos">
+                                    <img src="~/images/offer.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="single.html"><img src="~/images/2.png" alt=" " class="img-responsive" /></a>
+                                                <p>Pepsi soft drink (2 Ltr)</p>
+                                                <h4>$8.00 <span>$10.00</span></h4>
+                                            </div>
+
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 top_brand_left">
+                        <div class="hover14 column">
+                            <div class="agile_top_brand_left_grid">
+                                <div class="agile_top_brand_left_grid_pos">
+                                    <img src="~/images/offer.png" alt=" " class="img-responsive" />
+                                </div>
+                                <div class="agile_top_brand_left_grid1">
+                                    <figure>
+                                        <div class="snipcart-item block">
+                                            <div class="snipcart-thumb">
+                                                <a href="single.html"><img src="~/images/4.png" alt=" " class="img-responsive" /></a>
+                                                <p>dogs food (4 Kg)</p>
+                                                <h4>$9.00 <span>$11.00</span></h4>
+                                            </div>
+
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //top-brands -->
+        <!-- fresh-vegetables -->
+        <div class="fresh-vegetables">
+            <div class="container">
+                <h3>Sản phẩm mới</h3>
+                <div class="w3l_fresh_vegetables_grids" style="padding:1em 0em 1em 1em;margin:3em 0em 0em;">
+                    <div class="col-md-3 w3l_fresh_vegetables_grid w3l_fresh_vegetables_grid_left">
+                        <div class="w3l_fresh_vegetables_grid2">
+                            <ul>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Strong bell</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="vegetables.html">Cá hồi</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="vegetables.html">Thịt thăn bò</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="drinks.html">Nước ép cam</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="pet.html">Bánh quy bơ</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="bread.html">Cánh gà 500g</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="household.html">Sữa Nutifood</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Bánh hộp Chocopie</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Cam sành</a></li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i><a href="products.html">Bưởi da xanh</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9 w3l_fresh_vegetables_grid_right">
+                        <div class="col-md-4 w3l_fresh_vegetables_grid">
+                            <div class="w3l_fresh_vegetables_grid1">
+                                <img src="~/images/strongbow.jpg" alt=" " class="img-responsive" style="height: 350px;" />
+                                <div class="w3l_fresh_vegetables_grid1_rel_pos">
+                                    <div class="more m1">
+                                        <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 w3l_fresh_vegetables_grid">
+                            <div class="w3l_fresh_vegetables_grid1">
+                                <div class="w3l_fresh_vegetables_grid1_rel">
+                                    <img src="~/images/52.png" alt=" " class="img-responsive" />
+                                    <div class="w3l_fresh_vegetables_grid1_rel_pos">
+                                        <div class="more m1">
+                                            <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w3l_fresh_vegetables_grid1_bottom">
+                                <img src="~/images/68.png" alt=" " class="img-responsive" />
+                                <div class="w3l_fresh_vegetables_grid1_rel_pos">
+                                    <div class="more m1">
+                                        <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                                    </div>
+                                </div>
+                                <div class="w3l_fresh_vegetables_grid1_bottom_pos">
+                                    <h5>Special Offers</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 w3l_fresh_vegetables_grid">
+                            <div class="w3l_fresh_vegetables_grid1">
+                                <img src="~/images/46.png" alt=" " class="img-responsive" />
+                                <div class="w3l_fresh_vegetables_grid1_rel_pos">
+                                    <div class="more m1">
+                                        <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w3l_fresh_vegetables_grid1_bottom">
+                                <img src="~/images/11.jpg" alt=" " class="img-responsive" />
+                                <div class="w3l_fresh_vegetables_grid1_rel_pos">
+                                    <div class="more m1">
+                                        <a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                        <div class="agileinfo_move_text">
+                            <div class="agileinfo_marquee">
+                                <h4>Mua ngay <span class="blink_me">sản phẩm mới</span> để nhận ưu đãi cho những khách hàng đầu tiên</h4>
+                            </div>
+                            <div class="agileinfo_breaking_news">
+                                <span> </span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //fresh-vegetables -->
         <!-- footer -->
         <footer class="row">
-
 
             <div class="footer">
                 <div class="container">
@@ -380,7 +537,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             Context.Session.Set<int>("a", 1);
         }
     }
-    </div>
 
+    <!--Facebook-->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=345381992927311&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
