@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <td>Ảnh: </td>
-                <td>@Html.DisplayFor(model => model.Hinh)</td>
+                <td><img style="width:170px;height:150px;float:left; padding:5px;" src="~/images/@Html.DisplayFor(model => model.Hinh)" class="img-thumbnail" alt="Cinque Terre"/></td>
             </tr>
             <tr>
                 <td>Nhà Cung Cấp: </td>
@@ -73,7 +73,7 @@
         <br />
         <form asp-action="Delete">
             <input type="hidden" asp-for="HanghoaID" />
-            <input type="submit" value="Xóa" class="w3-bar-item w3-padding w3-pale-red w3-button">
+            <input type="submit" value="Xóa" class="w3-bar-item w3-padding w3-pale-red w3-button" />
             <a asp-action="Index" class="w3-bar-item w3-padding w3-pale-blue w3-button">Trở Về</a>
         </form>
     </div>

@@ -344,6 +344,43 @@ namespace NETCKTEAM30.Controllers
 
             return RedirectToAction("chitiet", "HangHoas");
         }
-
+        public IActionResult customer()
+        {
+            List<NguoiDung> Dsnd = new List<NguoiDung>();
+            Dsnd = _context.NguoiDungs.Where(h => h.LoaiNgDungID == 3).ToList();
+            return View(Dsnd.Select(h => new NguoiDung
+            {
+                HoTen = h.HoTen,
+                NguoiDungID = h.NguoiDungID,
+                GioiTinh = h.GioiTinh,
+                NgaySinh = h.NgaySinh,
+                DiaChi = h.DiaChi,
+                SDT = h.SDT,
+                Email = h.Email,
+                Hinh = h.Hinh,
+                LoaiNgDung = h.LoaiNgDung,
+                TenDangNhap = h.TenDangNhap,
+                MatKhau = h.MatKhau
+            }));
+        }
+        public IActionResult admin()
+        {
+            List<NguoiDung> Dsnd = new List<NguoiDung>();
+            Dsnd = _context.NguoiDungs.Where(h => h.LoaiNgDungID == 1).ToList();
+            return View(Dsnd.Select(h => new NguoiDung
+            {
+                HoTen = h.HoTen,
+                NguoiDungID = h.NguoiDungID,
+                GioiTinh = h.GioiTinh,
+                NgaySinh = h.NgaySinh,
+                DiaChi = h.DiaChi,
+                SDT = h.SDT,
+                Email = h.Email,
+                Hinh = h.Hinh,
+                LoaiNgDung = h.LoaiNgDung,
+                TenDangNhap = h.TenDangNhap,
+                MatKhau = h.MatKhau
+            }));
+        }
     }
 }

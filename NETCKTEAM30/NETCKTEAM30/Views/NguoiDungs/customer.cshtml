@@ -1,20 +1,18 @@
 ﻿@model IEnumerable<NETCKTEAM30.Models.NguoiDung>
 
 @{
-    ViewData["Title"] = "Index";
-}
-@{
+    ViewData["Title"] = "customer";
     Layout = "_Admin";
 }
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">ACCOUNTS</h3>
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">CUSTOMER'S ACCOUNT</h3>
     <br />
     <br />
     <p>
-        <a asp-action="Create" class="w3-bar-item w3-button w3-padding w3-pale-red"><i class="fa fa-plus-square"></i> ADD USER</a>
+        <a asp-action="Create" class="w3-bar-item w3-button w3-padding w3-pale-red"><i class="fa fa-plus-square"></i> ADD ACCOUNT</a>
     </p>
     <table class="table">
         <thead>
@@ -44,10 +42,10 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td style="width:170px">
+                    <td style="width:180px">
                         @Html.DisplayFor(modelItem => item.HoTen)
                     </td>
-                    <td style="width:110px">
+                    <td style="width:150px">
                         @Html.DisplayFor(modelItem => item.NgaySinh)
                     </td>
                     <td style="width: 200px">
@@ -58,9 +56,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td style="width: 170px">
-                        @Html.DisplayFor(modelItem => item.LoaiNgDung.TenLoai)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.NguoiDungID" class="w3-pale-yellow w3-button">Sửa</a> |

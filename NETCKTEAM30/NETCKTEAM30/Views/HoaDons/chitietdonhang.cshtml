@@ -2,111 +2,130 @@
 @{
     ViewData["Title"] = "chitietdonhang";
 }
-@{ 
+@{
     Layout = "_Admin";
 }
-<meta name="viewport" content="width=device-width" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@ViewData["Title"] - NETCKTEAM30</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="~/css/mycss.css" rel="stylesheet" />
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-<body>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row works" style="position:relative;z-index:1;">
-
-                <div id="id01" class="modall" style="display:block;">
-                    <div class="dschonmon">
-                        <h2 id="dscm">CHI TIẾT ĐƠN HÀNG </h2>
-                        <hr />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Tên Khách Hàng:</span><span>@Model.hoadon.NguoiDung.HoTen</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Ngày Đặt:</span><span>@Model.hoadon.NgayDat</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Ngày Nhận:</span><span>@Model.hoadon.NgayNhan</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Địa Chỉ:</span><span>@Model.hoadon.DiaChi</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Hình Thức Thanh Toán:</span><span>@Model.hoadon.ThanhToan.Ten</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Hình Thức Thanh vận Chuyển:</span><span>@Model.hoadon.VanChuyen.Ten</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Phí Vận Chuyển:</span><span>@Model.hoadon.ThanhToan.Ten</span><br />
-                        <span style="font-size:20px;font-weight:700;margin-right:20px;">Trạng Thái Đơn Hàng:</span><span>@Model.hoadon.TrangThai.TenTrangThai</span><br />
-                        <hr />
-                        <h3 id="dscm">DANH SÁCH SẢN PHẨM ĐÃ MUA </h3>
-                        <table class="table">
-
-                            <thead>
-                                <tr>
-
-                                    <th>
-                                        Tên Sản Phẩm
-                                    </th>
-                                    <th>
-                                        Đơn Giá
-                                    </th>
-                                    <th>
-                                        Số Lượng
-                                    </th>
-                                    <th>
-                                        Giảm Giá
-                                    </th>
-                                    <th>
-                                        Thành tiền
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.chitiet)
-                                {
-                                    <tr>
-                                        <td>
-                                            @item.HangHoa.TenHh
-                                        </td>
-                                        <td>
-                                            @item.DonGia $
-                                        </td>
-                                        <td>
-                                            @item.SoLuong
-                                        </td>
-                                        <td>
-                                            @item.GiamGia
-                                        </td>
-                                        <td>
-                                            @item.ThanhTien
-                                        </td>
-
-
-
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                        <span style="float:right; margin-right:10px;">Tổng cộng:@ViewBag.TongTien </span>
-                        <br />
-                        <br />
-
-                        <a class="btn btn-danger" asp-action="Index" asp-controller="HoaDons" style="float:right;"> Xong</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mainmenu {
+            margin-left: 20%;
         }
-    </script>
 
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        tr, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center">ORDERS</h3>
+    <br />
+    <br />
+    <table class="mainmenu" style="width:800px">
+        <tr>
+            <td>Tên Khách Hàng: </td>
+            <td>@Model.hoadon.NguoiDung.HoTen)</td>
+        </tr>
+        <tr>
+            <td>Ngày Đặt: </td>
+            <td>@Model.hoadon.NgayDat)</td>
+        </tr>
+        <tr>
+            <td>Ngày Nhận: </td>
+            <td>@Model.hoadon.NgayNhan)</td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ: </td>
+            <td>@Model.hoadon.NguoiDung.DiaChi)</td>
+        </tr>
+        <tr>
+            <td>Hình Thức Thanh Toán: </td>
+            <td>@Model.hoadon.ThanhToan.Ten)</td>
+        </tr>
+        <tr>
+            <td>Hình Thức Vận Chuyển: </td>
+            <td>@Model.hoadon.VanChuyen.Ten)</td>
+        </tr>
+        <tr>
+            <td>Phí Vận Chuyển: </td>
+            <td>@Model.hoadon.ThanhToan.Ten)</td>
+        </tr>
+        <tr>
+            <td>Trạng Thái Đơn Hàng: </td>
+            <td>@Model.hoadon.TrangThai.TenTrangThai)</td>
+        </tr>
+    </table>
+    <h3 class="w3-bar-item w3-padding w3-white" style="width:100%; text-align: center" id="dscm">DANH SÁCH SẢN PHẨM ĐÃ MUA </h3>
+    <table class="mainmenu" style="width:800px">
+        <thead>
+            <tr>
+                <th>
+                    Tên Sản Phẩm
+                </th>
+                <th>
+                    Đơn Giá
+                </th>
+                <th>
+                    Số Lượng
+                </th>
+                <th>
+                    Giảm Giá
+                </th>
+                <th>
+                    Thành tiền
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.chitiet)
+            {
+                <tr>
+                    <td>
+                        @item.HangHoa.TenHh
+                    </td>
+                    <td>
+                        @item.DonGia $
+                    </td>
+                    <td>
+                        @item.SoLuong
+                    </td>
+                    <td>
+                        @item.GiamGia
+                    </td>
+                    <td>
+                        @item.ThanhTien
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <span style="margin-left:900px;font-weight: bold" >Tổng cộng:@ViewBag.TongTien </span>
+    <br />
+    <br />
+    <div class="mainmenu">
+    <a asp-action="suadonhang" asp-route-id="@Model.hoadon.HoaDonID" class="w3-bar-item w3-padding w3-pale-yellow w3-button">Sửa</a>
+    <a asp-action="Delete" asp-route-id="@Model.hoadon.HoaDonID" class="w3-bar-item w3-padding w3-pale-red w3-button">Xóa</a>
+    <a asp-action="Index" class="w3-bar-item w3-padding w3-pale-blue w3-button">Trở Về</a>
+    </div>
 </body>
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
